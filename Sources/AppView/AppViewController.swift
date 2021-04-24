@@ -10,32 +10,33 @@ import Foundation
 import UIKit
 
 // View
-protocol ViewState {}
+public protocol ViewState {}
 // Presenter
-protocol PresenterInputAction {}
+public protocol PresenterInputAction {}
 
-class ViewActionEvent: UIViewController {
-    func setupView(with state: ViewState) {}
-    func reloadData() {}
+public protocol ViewActionEvent: AppViewController {
+    func setupView(with state: ViewState)
+    func reloadData()
 }
 
-class PresentActionEvent {
+public class PresentActionEvent {
     func handleInputAction(_ action: PresenterInputAction) {}
 }
 
+
 // VC helper
-class AppViewController: ViewActionEvent {
+open class AppViewController: UIViewController, ViewActionEvent {
     
     private var customPullRefreshHandler: Bool = false
-    var pullRefreshHandler: (() -> Void)?
+    public var pullRefreshHandler: (() -> Void)?
     
-    func initAppViewController() {
+    public func initAppViewController() {
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
         tapGestureReconizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGestureReconizer)
     }
     
-    func addPullRefresh(to scrollView: UIScrollView, tintColor: UIColor, custoHandler: Bool = false) {
+    public func addPullRefresh(to scrollView: UIScrollView, tintColor: UIColor, custoHandler: Bool = false) {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = tintColor
         refreshControl.addTarget(self, action: #selector(pullRefreshList(refreshControl:)), for: .valueChanged)
@@ -44,7 +45,15 @@ class AppViewController: ViewActionEvent {
         self.customPullRefreshHandler = custoHandler
     }
     
-    override func reloadData() {}
+    open func setupView(with state: ViewState) { }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        self.initAppViewController()
+        self.reloadData()
+    }
+    
+    open func reloadData() { }
     
     @objc
     private func tap(_ sender: UITapGestureRecognizer) {
@@ -62,4 +71,4 @@ class AppViewController: ViewActionEvent {
     }
 }
 
-protocol ViewComponents {}
+public protocol ViewComponents {}
