@@ -10,12 +10,118 @@
    </a>
 </p>
 
-
 # AppViewUtilits
 
 <p align="left">
-A collection of useful extensions for working on a iOS app projects that have been used in them many times.
+A collection of useful extensions and classes for working on a iOS app projects that have been used in them many times.
 </p>
+
+## Helpers
+
+### AppViewController
+
+
+### AppVersion
+Application version information
+
+```swift
+       AppVersion.getInfo()
+```
+
+Result
+
+```swift
+      struct Info {
+        var appName: String
+        var version: String
+        var build: String
+        var target: String
+    }
+```
+
+### AppOutletsActions
+Handling button or view taps
+
+```swift
+        button.addAction {
+            ...
+        }
+        button.addAction(for: .touchDown) {
+            ...
+        }
+        button.tapBegin {
+            ...
+        }
+        button.tapEnd {
+            ...
+        }
+```
+
+```swift
+        view.addAction {
+            ...
+        }
+```
+
+
+### Decorate
+
+Wrapper for setting UI element styles
+
+```swift
+ 
+extension DecorateWrapper where Element: UILabel {
+    static func headerStyle() -> DecorateWrapper {
+        return .wrap { label in
+            label.textColor = .black
+            label.font = UIFont.boldSystemFont(ofSize: 26.0)
+            label.textAlignment = .left
+            label.lineBreakMode = .byWordWrapping
+            label.numberOfLines = 2
+        }
+    }
+}
+```
+
+Example call
+
+```swift
+		label.decorate(.headerStyle())
+```
+
+### Environment
+
+```swift
+        Environment.current
+```
+
+Result
+
+```swift
+ enum Environment {
+    case debug
+    case release
+    case testFlight
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Installation
 
