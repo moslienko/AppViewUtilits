@@ -37,11 +37,7 @@ class ListItemView: AppView {
     
     override func applyStyles() {
         self.backgroundColor = .white
-        
-        self.titleLabel.numberOfLines = 0
-        self.titleLabel.textAlignment = .left
-        self.titleLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
-        self.titleLabel.textColor = .black
+        self.titleLabel.decorate(.headerStyle())
     }
     
     override func setupActions() {
@@ -49,5 +45,17 @@ class ListItemView: AppView {
             guard let model = self.model as? ListItemViewModel else { return }
             model.actionCallback?()
         })
+    }
+}
+
+extension DecorateWrapper where Element: UILabel {
+    static func headerStyle() -> DecorateWrapper {
+        return .wrap { label in
+            label.textColor = .black
+            label.font = UIFont.boldSystemFont(ofSize: 14.0)
+            label.textAlignment = .left
+            label.lineBreakMode = .byWordWrapping
+            label.numberOfLines = 0
+        }
     }
 }

@@ -12,16 +12,16 @@ import AppViewUtilits
 // MARK: - ViewController
 
 /// The ViewController
-class ViewController: UIViewController {
+class ViewController: AppViewController {
     
     // MARK: Properties
     @IBOutlet private weak var listItemView: ListItemView!
     
-    // MARK: View-Lifecycle
+    public class var fromXib: ViewController {
+        ViewController(nibName: "ViewController", bundle: nil)
+    }
     
-    /// View did load
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func reloadData() {
         self.view.backgroundColor = .white
         
         let model = ListItemViewModel(title: "Hello world!")
@@ -31,8 +31,6 @@ class ViewController: UIViewController {
         }
         self.listItemView.model = model
     }
-        
-    public class var fromXib: ViewController {
-        ViewController(nibName: "ViewController", bundle: nil)
-    }
+    
+    override func setupView(with state: ViewState) {}
 }

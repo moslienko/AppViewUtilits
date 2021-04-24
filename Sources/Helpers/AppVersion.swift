@@ -9,18 +9,18 @@ import Foundation
 
 public enum AppVersion {
     
-    struct Info {
-        var appName: String
-        var version: String
-        var build: String
-        var target: String
+    public struct Info {
+        public var appName: String
+        public var version: String
+        public var build: String
+        public var target: String
     }
     
-    static func getInfo() -> Info {
+    public static func getInfo() -> Info {
         return Info(appName: self.name, version: self.version, build: self.build, target: self.target)
     }
     
-    static func getLanguage() -> String? {
+    public static func getLanguage() -> String? {
         guard let language = Locale.current.languageCode else { return nil }
         return language
     }
