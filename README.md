@@ -18,8 +18,6 @@ A collection of useful extensions and classes for working on a iOS app projects 
 
 ## Helpers
 
-### AppViewController
-
 
 ### AppVersion
 Application version information
@@ -105,24 +103,6 @@ Result
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Installation
 
 ### Swift Package Manager
@@ -131,7 +111,7 @@ To integrate using Apple's [Swift Package Manager](https://swift.org/package-man
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.2.0")
+    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.2.1")
 ]
 ```
 
