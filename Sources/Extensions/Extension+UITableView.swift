@@ -41,4 +41,16 @@ public extension UITableView {
         return self.dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
     }
     
+    func reloadWithAnimation(_ animation: UIView.AnimationOptions, duration: TimeInterval) {
+        UIView.transition(
+            with: self,
+            duration: duration,
+            options: animation,
+            animations: {
+                self.reloadData()
+            },
+            completion: nil
+        )
+    }
+    
 }

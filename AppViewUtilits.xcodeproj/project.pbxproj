@@ -13,6 +13,8 @@
 		3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9C432C2274629C000A6585 /* LaunchScreen.storyboard */; };
 		3D9C433422746323000A6585 /* AppViewUtilits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* AppViewUtilits.framework */; };
 		3D9C433522746323000A6585 /* AppViewUtilits.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* AppViewUtilits.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		950FB34726EDBC16008B63DB /* Extension+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FB34626EDBC16008B63DB /* Extension+Optional.swift */; };
+		950FB34926EDBC27008B63DB /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FB34826EDBC27008B63DB /* Extension+UIButton.swift */; };
 		956BBDE32633AF9F008AC0A6 /* Extension+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBDC02633AF9F008AC0A6 /* Extension+Double.swift */; };
 		956BBDE42633AF9F008AC0A6 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBDC12633AF9F008AC0A6 /* Extension+UIViewController.swift */; };
 		956BBDE52633AF9F008AC0A6 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBDC22633AF9F008AC0A6 /* Extension+UIImage.swift */; };
@@ -109,6 +111,8 @@
 		3D9C432A2274629C000A6585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D9C432D2274629C000A6585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D9C432F2274629C000A6585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		950FB34626EDBC16008B63DB /* Extension+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Optional.swift"; sourceTree = "<group>"; };
+		950FB34826EDBC27008B63DB /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
 		956BBDC02633AF9F008AC0A6 /* Extension+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Double.swift"; sourceTree = "<group>"; };
 		956BBDC12633AF9F008AC0A6 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		956BBDC22633AF9F008AC0A6 /* Extension+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 				956BBEA12633C1B8008AC0A6 /* Extension+UIColor.swift */,
 				956BBEA72633C1FA008AC0A6 /* Extension+UIImageView.swift */,
 				956BBEC12633C8BF008AC0A6 /* Extension+UIScrollView.swift */,
+				950FB34626EDBC16008B63DB /* Extension+Optional.swift */,
+				950FB34826EDBC27008B63DB /* Extension+UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -740,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950FB34926EDBC27008B63DB /* Extension+UIButton.swift in Sources */,
 				3D9C43262274629B000A6585 /* ViewController.swift in Sources */,
 				956BBE7A2633B396008AC0A6 /* ListItemViewModel.swift in Sources */,
 				956BBEA82633C1FA008AC0A6 /* Extension+UIImageView.swift in Sources */,
@@ -747,6 +754,7 @@
 				956BBE962633BFA7008AC0A6 /* Extension+Encodable.swift in Sources */,
 				3D9C43242274629B000A6585 /* AppDelegate.swift in Sources */,
 				956BBE9C2633C151008AC0A6 /* Extension+UICollectionView.swift in Sources */,
+				950FB34726EDBC16008B63DB /* Extension+Optional.swift in Sources */,
 				956BBE842633B39B008AC0A6 /* ListItemView.swift in Sources */,
 				956BBEC22633C8BF008AC0A6 /* Extension+UIScrollView.swift in Sources */,
 			);
