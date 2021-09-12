@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 28.10.2019.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension UIStackView {
     

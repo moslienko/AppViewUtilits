@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 09.04.2019.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension UIBezierPath {
     convenience init(shouldRoundRect rect: CGRect, topLeftRadius: CGSize = .zero, topRightRadius: CGSize = .zero, bottomLeftRadius: CGSize = .zero, bottomRightRadius: CGSize = .zero) {

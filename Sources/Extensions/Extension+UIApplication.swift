@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 25.12.2019.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension UIApplication {
     

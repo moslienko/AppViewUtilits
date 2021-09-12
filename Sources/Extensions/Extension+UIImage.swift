@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 30.07.2019.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension UIImage {
     

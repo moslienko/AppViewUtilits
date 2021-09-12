@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 18.03.2020.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension Int {
     

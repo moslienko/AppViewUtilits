@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 24.04.2020.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 internal final class ContentSizedTableView: UITableView {
     

@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 28.11.2020.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension UIWindow {
     
