@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 29.11.2020.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 @objc
 fileprivate class ClosureSleeve: NSObject {

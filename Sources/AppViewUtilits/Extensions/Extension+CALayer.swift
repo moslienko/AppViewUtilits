@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 21.09.2020.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public extension CALayer {
     

@@ -6,7 +6,9 @@
 //  Copyright © 2021 moslienko. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public protocol ClassNameProtocol {
     static var className: String { get }
@@ -39,6 +41,18 @@ public extension UITableView {
     
     func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
         return self.dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
+    }
+    
+    func reloadWithAnimation(_ animation: UIView.AnimationOptions, duration: TimeInterval) {
+        UIView.transition(
+            with: self,
+            duration: duration,
+            options: animation,
+            animations: {
+                self.reloadData()
+            },
+            completion: nil
+        )
     }
     
 }

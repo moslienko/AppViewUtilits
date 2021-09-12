@@ -6,7 +6,9 @@
 //  Copyright © 2021 moslienko. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 import AppViewUtilits
 
 class ListItemViewModel: AppViewModel {

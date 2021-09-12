@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 20.04.2019.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 
 fileprivate enum SlideAnimation {
     case left, right

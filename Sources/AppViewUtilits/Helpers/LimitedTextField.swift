@@ -5,7 +5,9 @@
 //  Created by Pavel Moslienko on 17.06.2019.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 import Foundation
 
 internal class LimitedTextField: UITextField {
