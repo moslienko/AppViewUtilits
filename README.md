@@ -16,51 +16,46 @@
 A collection of useful extensions and classes for working on a iOS app projects that have been used in them many times.
 </p>
 
-## Helpers
+## Extensions
+<p align="left">
+There are extensions to the types: Double, UIViewController, UIImage, CAAnimation, UIBezierPath, UITabBar, Dictionary, Array, UITextField, CGFloat, Sequence, String, UILabel, Notification, FileManager, Int, CALayer, UIApplication, UIWindow, AVPlayer, NSCountedSet, Collection, UIView, Date, UIStackView, UITableView, Encodable, UICollectionView, UIColor, UIImageView, UIScrollView, Optional, UIButton, SKProduct
+</p>
 
+## AppView
+<p align="left">
+AppView - this is a set of classes to facilitate work with a UIView & UIViewController. The following classes are available for use: **AppView** (UIView), **AppViewModel** - model class for AppView, **AppViewController** (UIViewController), **AppViewTableCell** (UITableCell which is based on AppView)
+</p>
+
+## Helpers
 
 ### AppVersion
 Application version information
 
 ```swift
-       AppVersion.getInfo()
+AppVersion.getInfo()
 ```
 
 Result
 
 ```swift
-      struct Info {
-        var appName: String
-        var version: String
-        var build: String
-        var target: String
-    }
+struct Info {
+    var appName: String
+    var version: String
+    var build: String
+    var target: String
+}
 ```
 
 ### AppOutletsActions
 Handling button or view taps
 
 ```swift
-        button.addAction {
-            ...
-        }
-        button.addAction(for: .touchDown) {
-            ...
-        }
-        button.tapBegin {
-            ...
-        }
-        button.tapEnd {
-            ...
-        }
+button.addAction {}
+button.addAction(for: .touchDown) {}
+button.tapBegin {}
+button.tapEnd {}
+view.addAction {}
 ```
-
-```swift
-        view.addAction {
-            ...
-        }
-```
-
 
 ### Decorate
 
@@ -80,17 +75,16 @@ extension DecorateWrapper where Element: UILabel {
     }
 }
 ```
-
 Example call
 
 ```swift
-		label.decorate(.headerStyle())
+label.decorate(.headerStyle())
 ```
 
 ### Environment
 
 ```swift
-        Environment.current
+Environment.current
 ```
 
 Result
@@ -103,6 +97,52 @@ Result
 }
 ```
 
+### LimitedTextField
+UITextField with the maximum number of entered characters
+```swift
+LimitedTextField: UITextField {}
+```
+
+### ContentSizedTableView
+```swift
+ContentSizedTableView: UITableView {}
+```
+
+### DebouncedFunction
+```swift
+let method = DebouncedFunction(delay: 1.0) {
+    Log.debug("Called")
+}
+method.call()
+```
+
+### Reachability
+Internet connection checker
+```swift
+Reachability.isConnectedToNetwork()
+```
+
+### ThreadSwitching
+Easy work with threads
+```swift
+onMainThread {}
+onBgThread {}
+```
+
+### Log
+Logger to the console
+```swift
+Log.debug("Started")
+Log.info("Success finished")
+Log.error("Failed \(error)")
+```
+
+### LimitedTextField
+UITextField with the maximum number of entered characters
+```swift
+LimitedTextField: UITextField {}
+```
+
 ### Installation
 
 ### Swift Package Manager
@@ -111,7 +151,7 @@ To integrate using Apple's [Swift Package Manager](https://swift.org/package-man
 
 ```swift
 dependencies: [
-.package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.2.2")
+    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.2.3")
 ]
 ```
 
@@ -145,3 +185,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+

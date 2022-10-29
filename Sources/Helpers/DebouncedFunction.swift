@@ -16,12 +16,12 @@ public class DebouncedFunction: NSObject {
     /// debounced function initializer
     /// - parameter delay: debounce delay time interval in seconds
     /// - parameter callback: callback to invoke with debounce
-    init(delay: TimeInterval, callback: @escaping (() -> Void)) {
+    public init(delay: TimeInterval, callback: @escaping (() -> Void)) {
         self.delay = delay
         self.callback = callback
     }
     
-    func call() {
+    public func call() {
         timer?.invalidate()
         let nextTimer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(DebouncedFunction.fire), userInfo: nil, repeats: false)
         timer = nextTimer
