@@ -32,6 +32,8 @@ class ViewController: AppViewController {
             self.listItemView.updateView()
         }
         self.listItemView.model = model
+        
+        Log.info("Hello")
     }
     
     override func setupView(with state: ViewState) {}

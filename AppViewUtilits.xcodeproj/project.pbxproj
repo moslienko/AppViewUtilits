@@ -64,6 +64,7 @@
 		95C63865290CF98900A224B2 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63862290CF98900A224B2 /* AppView.swift */; };
 		95C63866290CF98900A224B2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63863290CF98900A224B2 /* AppViewModel.swift */; };
 		95C63867290CF98900A224B2 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63864290CF98900A224B2 /* AppViewController.swift */; };
+		95C63869290CF9EF00A224B2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63868290CF9EF00A224B2 /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		95C63862290CF98900A224B2 /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		95C63863290CF98900A224B2 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		95C63864290CF98900A224B2 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		95C63868290CF9EF00A224B2 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				95C63854290CF96900A224B2 /* LimitedTextField.swift */,
 				95C6384E290CF96900A224B2 /* Reachability.swift */,
 				95C63852290CF96900A224B2 /* ThreadSwitching.swift */,
+				95C63868290CF9EF00A224B2 /* Log.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				956BBDF72633AF9F008AC0A6 /* Extension+NSCountedSet.swift in Sources */,
 				956BBDE42633AF9F008AC0A6 /* Extension+UIViewController.swift in Sources */,
 				956BBE722633B28F008AC0A6 /* Extension+UITableView.swift in Sources */,
+				95C63869290CF9EF00A224B2 /* Log.swift in Sources */,
 				956BBDFB2633AF9F008AC0A6 /* Extension+UIStackView.swift in Sources */,
 				956BBDF62633AF9F008AC0A6 /* Extension+AVPlayer.swift in Sources */,
 				95C63856290CF96900A224B2 /* AppVersion.swift in Sources */,
