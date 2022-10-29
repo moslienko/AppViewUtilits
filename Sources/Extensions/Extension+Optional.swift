@@ -14,3 +14,13 @@ public extension Optional where Wrapped == String {
         (self ?? "").isEmpty
     }
 }
+
+public extension Optional where Wrapped == Int {
+    
+    func setPositiveValueOrZero() -> Int {
+        guard let val = self else {
+            return 0
+        }
+        return val < 0 ? 0 : val
+    }
+}

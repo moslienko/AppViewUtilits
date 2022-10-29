@@ -65,6 +65,7 @@
 		95C63866290CF98900A224B2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63863290CF98900A224B2 /* AppViewModel.swift */; };
 		95C63867290CF98900A224B2 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63864290CF98900A224B2 /* AppViewController.swift */; };
 		95C63869290CF9EF00A224B2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63868290CF9EF00A224B2 /* Log.swift */; };
+		95C6386B290D0EC600A224B2 /* Extensions+SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		95C63863290CF98900A224B2 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		95C63864290CF98900A224B2 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		95C63868290CF9EF00A224B2 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+SKProduct.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				956BBEC12633C8BF008AC0A6 /* Extension+UIScrollView.swift */,
 				950FB34626EDBC16008B63DB /* Extension+Optional.swift */,
 				950FB34826EDBC27008B63DB /* Extension+UIButton.swift */,
+				95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				956BBDF32633AF9F008AC0A6 /* Extension+CALayer.swift in Sources */,
 				956BBDF92633AF9F008AC0A6 /* Extension+UIView.swift in Sources */,
 				956BBDF22633AF9F008AC0A6 /* Extension+Int.swift in Sources */,
+				95C6386B290D0EC600A224B2 /* Extensions+SKProduct.swift in Sources */,
 				95C63857290CF96900A224B2 /* Reachability.swift in Sources */,
 				95C63861290CF97F00A224B2 /* ButtonState.swift in Sources */,
 				956BBDEB2633AF9F008AC0A6 /* Extension+UITextField.swift in Sources */,

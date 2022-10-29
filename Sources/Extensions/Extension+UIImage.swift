@@ -54,6 +54,13 @@ public extension UIImage {
         return image
     }
     
+    static func createFromSting(_ string: String) -> UIImage {
+        if let url = URL(string: string), let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+            return image
+        }
+        return UIImage()
+    }
+    
     func fixedOrientation() -> UIImage? {
         guard imageOrientation != UIImage.Orientation.up else {
             //This is default orientation, don't need to do anything
@@ -93,12 +100,12 @@ public extension UIImage {
         //Flip image one more time if needed to, this is to prevent flipped image
         switch imageOrientation {
         case .upMirrored, .downMirrored:
-            transform.translatedBy(x: size.width, y: 0)
-            transform.scaledBy(x: -1, y: 1)
+            _ = transform.translatedBy(x: size.width, y: 0)
+            _ = transform.scaledBy(x: -1, y: 1)
             break
         case .leftMirrored, .rightMirrored:
-            transform.translatedBy(x: size.height, y: 0)
-            transform.scaledBy(x: -1, y: 1)
+            _ = transform.translatedBy(x: size.height, y: 0)
+            _ = transform.scaledBy(x: -1, y: 1)
         case .up, .down, .left, .right:
             break
         @unknown default:

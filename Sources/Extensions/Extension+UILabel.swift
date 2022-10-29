@@ -12,7 +12,7 @@ import UIKit
 public extension UILabel {
     
     // MARK: - Lines
-
+    
     var maxNumberOfLines: Int {
         let maxSize = CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT))
         let text = (self.text ?? "") as NSString
@@ -49,5 +49,17 @@ public extension UILabel {
         let rect = CGSize(width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude)
         let labelSize = labelText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: self.font ?? UIFont.systemFont(ofSize: 14.0)], context: nil)
         return Int(ceil(CGFloat(labelSize.height) / self.font.lineHeight))
+    }
+    
+    func setLineHeight(_ lineHeight: CGFloat) {
+        if let text = self.text {
+            let attributeString = NSMutableAttributedString(string: text)
+            let style = NSMutableParagraphStyle()
+            
+            style.lineSpacing = lineHeight
+            style.alignment = self.textAlignment
+            attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: attributeString.length))
+            self.attributedText = attributeString
+        }
     }
 }
