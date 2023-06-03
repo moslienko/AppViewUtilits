@@ -11,6 +11,19 @@ import UIKit
 
 public extension UIStackView {
     
+    static func stackView(_ arrangedSubviews: [UIView],
+                          axis: NSLayoutConstraint.Axis,
+                          alignment: Alignment,
+                          distribution: Distribution,
+                          spacing: CGFloat) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+        stackView.axis = axis
+        stackView.alignment = alignment
+        stackView.distribution = distribution
+        stackView.spacing = spacing
+        return stackView
+    }
+    
     func addArrangedSubviewList(_ list: [UIView]) {
         list.forEach({ self.addArrangedSubview($0) })
     }

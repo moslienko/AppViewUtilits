@@ -23,7 +23,7 @@ There are extensions to the types: Double, UIViewController, UIImage, CAAnimatio
 
 ## AppView
 <p align="left">
-AppView - this is a set of classes to facilitate work with a UIView & UIViewController. The following classes are available for use: **AppView** (UIView), **AppViewModel** - model class for AppView, **AppViewController** (UIViewController), **AppViewTableCell** (UITableCell which is based on AppView)
+AppView - this is a set of classes to facilitate work with a UIView & UIViewController. The following classes are available for use: AppView (UIView), AppViewModel - model class for AppView, AppViewController (UIViewController), AppViewTableCell (UITableCell which is based on AppView)
 </p>
 
 ## Helpers

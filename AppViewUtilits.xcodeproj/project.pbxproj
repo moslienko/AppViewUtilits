@@ -250,9 +250,7 @@
 		3D9C42A0227458FA000A6585 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				956BBE132633AFAD008AC0A6 /* AppView */,
-				956BBDBF2633AF9F008AC0A6 /* Extensions */,
-				956BBDD92633AF9F008AC0A6 /* Helpers */,
+				95618A662A2B691700C2A944 /* AppViewUtilits */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -277,6 +275,16 @@
 				3D9C432F2274629C000A6585 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		95618A662A2B691700C2A944 /* AppViewUtilits */ = {
+			isa = PBXGroup;
+			children = (
+				956BBE132633AFAD008AC0A6 /* AppView */,
+				956BBDBF2633AF9F008AC0A6 /* Extensions */,
+				956BBDD92633AF9F008AC0A6 /* Helpers */,
+			);
+			path = AppViewUtilits;
 			sourceTree = "<group>";
 		};
 		956BBDBF2633AF9F008AC0A6 /* Extensions */ = {
