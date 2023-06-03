@@ -22,6 +22,16 @@ public extension UITextField {
     
     func setPlaceholderTextColor(_ color: UIColor) {
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [.foregroundColor: color])
-        
+    }
+    
+    func isAvailableInput(limit: Int, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+        if let text = self.text, (text.count + string.count - range.length) <= limit {
+            return true
+        } else {
+            return false
+        }
     }
 }
