@@ -15,7 +15,7 @@ class ListItemView: AppView {
     
     // MARK: - Outlet
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var actionButton: UIButton!
+    @IBOutlet private weak var actionButton: AppButton!
     
     @IBOutlet private weak var viewTopConstaint: NSLayoutConstraint!
     @IBOutlet private weak var viewBottomConstaint: NSLayoutConstraint!
@@ -34,23 +34,25 @@ class ListItemView: AppView {
     }
     
     override func setupComponents() {
+        self.actionButton.regularStyle = .actionButton()
         self.actionButton.setTitle("Action", for: .normal)
     }
     
     override func applyStyles() {
         self.backgroundColor = .white
-        //self.titleLabel.decorate(.headerStyle())
+        self.titleLabel.apply(.headerStyle())
     }
     
     override func setupActions() {
-        /*
-        self.actionButton.addAction(for: .touchUpInside, {
-            guard let model = self.model as? ListItemViewModel else { return }
+        self.actionButton.addAction {
+            guard let model = self.model as? ListItemViewModel else {
+                return
+            }
             model.actionCallback?()
-        })*/
+        }
     }
 }
-/*
+
 extension DecorateWrapper where Element: UILabel {
     static func headerStyle() -> DecorateWrapper {
         return .wrap { label in
@@ -62,4 +64,13 @@ extension DecorateWrapper where Element: UILabel {
         }
     }
 }
-*/
+
+extension DecorateWrapper where Element: UIButton {
+    static func actionButton() -> DecorateWrapper {
+        return .wrap { btn in
+            btn.setTitleColor(.systemBlue, for: [])
+            btn.tintColor = .systemBlue
+            btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
+        }
+    }
+}
