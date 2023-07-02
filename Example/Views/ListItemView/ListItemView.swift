@@ -39,17 +39,18 @@ class ListItemView: AppView {
     
     override func applyStyles() {
         self.backgroundColor = .white
-        self.titleLabel.decorate(.headerStyle())
+        //self.titleLabel.decorate(.headerStyle())
     }
     
     override func setupActions() {
+        /*
         self.actionButton.addAction(for: .touchUpInside, {
             guard let model = self.model as? ListItemViewModel else { return }
             model.actionCallback?()
-        })
+        })*/
     }
 }
-
+/*
 extension DecorateWrapper where Element: UILabel {
     static func headerStyle() -> DecorateWrapper {
         return .wrap { label in
@@ -61,3 +62,4 @@ extension DecorateWrapper where Element: UILabel {
         }
     }
 }
+*/

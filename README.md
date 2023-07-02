@@ -46,9 +46,6 @@ struct Info {
 }
 ```
 
-### AppOutletsActions
-Handling button or view taps
-
 ```swift
 button.addAction {}
 button.addAction(for: .touchDown) {}
