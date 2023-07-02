@@ -21,16 +21,10 @@ public protocol AppViewDelegate {
     func applyStyles()
 }
 
-open class AppView: UIView, AppViewDelegate, ViewDecorate {
+open class AppView: UIView, AppViewDelegate {
     public var model: AppViewModel? {
         didSet {
             self.updateView()
-        }
-    }
-    
-    public var viewStyle: ViewStyle? {
-        didSet {
-            viewStyle?.apply(to: self)
         }
     }
     

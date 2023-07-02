@@ -10,17 +10,19 @@
 import UIKit
 #endif
 
-public class AppButton: UIButton, ButtonDecorate {
+public class AppButton: UIButton {
     
     private var action: Callback?
     private var didHighlight: Callback?
     private var didUnhighlight: Callback?
     
-    public var buttonStyle: ButtonStyle? {
+    public var regularStyle: DecorateWrapper<AppButton>? {
         didSet {
-            buttonStyle?.apply(to: self)
+            setupStyle()
         }
     }
+    public var disabledStyle: DecorateWrapper<AppButton>?
+    public var highlightedStyle: DecorateWrapper<AppButton>?
     
     public override var isEnabled: Bool {
         get {
@@ -28,10 +30,7 @@ public class AppButton: UIButton, ButtonDecorate {
         }
         set(isEnabled) {
             super.isEnabled = isEnabled
-            
-            setTitleColor(isEnabled ? buttonStyle?.titleColor : buttonStyle?.disabledTitleColor, for: .normal)
-            backgroundColor = isEnabled ? buttonStyle?.backgroundColor : buttonStyle?.disabledBackgroundColor
-            layer.borderColor = isEnabled ? buttonStyle?.borderColor.cgColor : buttonStyle?.disabledBorderColor?.cgColor
+            setupStyle()
         }
     }
     
@@ -41,9 +40,7 @@ public class AppButton: UIButton, ButtonDecorate {
         }
         set(isHighlighted) {
             super.isHighlighted = isHighlighted
-            
-            backgroundColor = isHighlighted ? buttonStyle?.highlightedBackgroundColor : buttonStyle?.backgroundColor
-            layer.borderColor = isHighlighted ? buttonStyle?.highlightedBorderColor?.cgColor : buttonStyle?.borderColor.cgColor
+            setupStyle()
         }
     }
     
@@ -53,9 +50,7 @@ public class AppButton: UIButton, ButtonDecorate {
         }
         set(isSelected) {
             super.isSelected = isSelected
-            
-            backgroundColor = isSelected ? buttonStyle?.selectedBackgroundColor : buttonStyle?.backgroundColor
-            layer.borderColor = isEnabled ? buttonStyle?.selectedBorderColor?.cgColor : buttonStyle?.highlightedBorderColor?.cgColor
+            setupStyle()
         }
     }
     
@@ -64,13 +59,17 @@ public class AppButton: UIButton, ButtonDecorate {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
-    convenience init(title: String, style: ButtonStyle) {
+    convenience public init(title: String, disabledTitle: String? = nil) {
         self.init(frame: .zero)
-        setTitle(title, for: [])
-        self.buttonStyle = style
+        if let disabledTitle = disabledTitle {
+            setTitle(title, for: [.normal, .focused, .application, .highlighted, .reserved, .selected])
+            setTitle(disabledTitle, for: [.disabled])
+        } else {
+            setTitle(title, for: [])
+        }
     }
     
     public func addAction(_ action: @escaping Callback) {
@@ -95,6 +94,22 @@ public class AppButton: UIButton, ButtonDecorate {
             action: #selector(animateUp),
             for: [.touchDragExit, .touchCancel, .touchUpOutside, .touchUpInside]
         )
+    }
+    
+    private func setupStyle() {
+        if !isEnabled {
+            if let style = disabledStyle {
+                apply(style)
+            }
+        } else {
+            if let style = regularStyle {
+                apply(style)
+            }
+        }
+        
+        if isHighlighted, let style = highlightedStyle {
+            apply(style)
+        }
     }
     
     @objc

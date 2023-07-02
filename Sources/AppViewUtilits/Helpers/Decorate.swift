@@ -12,14 +12,28 @@ import UIKit
 
 public protocol Decorate {}
 
-public protocol ButtonDecorate: Decorate {
-    var buttonStyle: ButtonStyle? { get set }
+extension NSObject: Decorate { }
+
+public extension Decorate {
+    
+    static func style(_ style: @escaping (Self) -> Void) -> (Self) -> Void {
+        return style
+    }
+    
+    func apply(_ style: DecorateWrapper<Self>) {
+        switch style {
+        case let .wrap(style):
+            style(self)
+        }
+    }
+    
+    func apply(_ styles: [DecorateWrapper<Self>]) {
+        styles.forEach({ self.apply($0) })
+    }
 }
 
-public protocol LabelDecorate: Decorate {
-    var labelStyle: LabelStyle? { get set }
-}
+public typealias Style<Element> = (Element) -> Void
 
-public protocol ViewDecorate: Decorate {
-    var viewStyle: ViewStyle? { get set }
+public enum DecorateWrapper<Element> {
+    case wrap(style: Style<Element>)
 }
