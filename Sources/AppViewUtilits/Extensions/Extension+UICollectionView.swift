@@ -27,4 +27,24 @@ public extension UICollectionView {
         return self.dequeueReusableCell(withReuseIdentifier: type.className, for: indexPath) as! T
     }
     
+    func dequeue<T: UICollectionReusableView>(cell: T.Type, indexPath: IndexPath) -> T? {
+        return dequeueReusableCell(withReuseIdentifier: T.className, for: indexPath) as? T
+    }
+    
+    func dequeue<T: UICollectionReusableView>(footer: T.Type, indexPath: IndexPath) -> T? {
+        return  dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: T.className,
+            for: indexPath) as? T
+    }
+    
+    func registerSectionHeader<T: UICollectionReusableView>(_ header: T.Type) {
+        register(header, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                 withReuseIdentifier: header.className)
+    }
+    
+    func registerSectionFooter<T: UICollectionReusableView>(_ footer: T.Type) {
+        register(footer, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                 withReuseIdentifier: footer.className)
+    }
 }

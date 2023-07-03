@@ -30,7 +30,7 @@ public class PresentActionEvent {
 open class AppViewController: UIViewController, ViewActionEvent {
     
     private var customPullRefreshHandler: Bool = false
-    public var pullRefreshHandler: (() -> Void)?
+    public var pullRefreshHandler: Callback?
     
     public func initAppViewController() {
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
