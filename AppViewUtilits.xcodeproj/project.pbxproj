@@ -74,6 +74,7 @@
 		95C63867290CF98900A224B2 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63864290CF98900A224B2 /* AppViewController.swift */; };
 		95C63869290CF9EF00A224B2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63868290CF9EF00A224B2 /* Log.swift */; };
 		95C6386B290D0EC600A224B2 /* Extensions+SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */; };
+		95E359DB2A5268FD00D2A036 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		95C63864290CF98900A224B2 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		95C63868290CF9EF00A224B2 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+SKProduct.swift"; sourceTree = "<group>"; };
+		95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +421,7 @@
 				95C63852290CF96900A224B2 /* ThreadSwitching.swift */,
 				95C63868290CF9EF00A224B2 /* Log.swift */,
 				953310C12A374F3200D58A82 /* Callback.swift */,
+				95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				95C6385B290CF96900A224B2 /* ThreadSwitching.swift in Sources */,
 				953310B42A37424900D58A82 /* AppViewCellIdentifiable.swift in Sources */,
 				956BBDE72633AF9F008AC0A6 /* Extension+UIBezierPath.swift in Sources */,
+				95E359DB2A5268FD00D2A036 /* NotificationObserver.swift in Sources */,
 				95C63858290CF96900A224B2 /* Decorate.swift in Sources */,
 				9506EEFA2A484A1800C10046 /* AppButton.swift in Sources */,
 				956BBDF42633AF9F008AC0A6 /* Extension+UIApplication.swift in Sources */,
