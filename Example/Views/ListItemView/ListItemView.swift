@@ -26,7 +26,8 @@ class ListItemView: AppView {
         guard let model = self.model as? ListItemViewModel else { return }
         
         self.titleLabel.text = model.title
-        
+        self.actionButton.isEnabled = model.isEnabled
+        print("isEnabled - \(model.isEnabled)")
         self.viewTopConstaint.constant = model.inset.top
         self.viewBottomConstaint.constant = model.inset.bottom
         self.viewLeftConstaint.constant =  model.inset.left
@@ -35,6 +36,7 @@ class ListItemView: AppView {
     
     override func setupComponents() {
         self.actionButton.regularStyle = .actionButton()
+        self.actionButton.disabledStyle = .disabledButton()
         self.actionButton.setTitle("Action", for: .normal)
     }
     
@@ -70,6 +72,14 @@ extension DecorateWrapper where Element: UIButton {
         return .wrap { btn in
             btn.setTitleColor(.systemBlue, for: [])
             btn.tintColor = .systemBlue
+            btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
+        }
+    }
+    
+    static func disabledButton() -> DecorateWrapper {
+        return .wrap { btn in
+            btn.setTitleColor(.systemGray, for: [])
+            btn.tintColor = .systemGray
             btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         }
     }
