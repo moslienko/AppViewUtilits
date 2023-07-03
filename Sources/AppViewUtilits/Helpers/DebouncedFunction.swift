@@ -9,14 +9,14 @@ import Foundation
 
 public class DebouncedFunction: NSObject {
     
-    private var callback: (() -> Void)
+    private var callback: Callback
     private var delay: TimeInterval
     private weak var timer: Timer?
     
     /// debounced function initializer
     /// - parameter delay: debounce delay time interval in seconds
     /// - parameter callback: callback to invoke with debounce
-    public init(delay: TimeInterval, callback: @escaping (() -> Void)) {
+    public init(delay: TimeInterval, callback: @escaping Callback) {
         self.delay = delay
         self.callback = callback
     }

@@ -14,10 +14,12 @@ import AppViewUtilits
 class ListItemViewModel: AppViewModel {
     
     var title: String
-    var actionCallback: (() -> Void)?
+    var isEnabled: Bool
+    var actionCallback: Callback?
 
-    init(title: String, inset: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)) {
+    init(title: String, isEnabled: Bool, inset: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)) {
         self.title = title
+        self.isEnabled = isEnabled
         super.init()
         self.inset = inset
     }

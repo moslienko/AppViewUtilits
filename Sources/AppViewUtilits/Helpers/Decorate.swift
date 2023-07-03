@@ -10,23 +10,25 @@ import Foundation
 import UIKit
 #endif
 
-public protocol Decorate { }
+public protocol Decorate {}
 
 extension NSObject: Decorate { }
 
 public extension Decorate {
     
-    static func style(style: @escaping Style<Self>) -> Style<Self> { return style }
+    static func style(_ style: @escaping (Self) -> Void) -> (Self) -> Void {
+        return style
+    }
     
-    func decorate(_ style: DecorateWrapper<Self>) {
+    func apply(_ style: DecorateWrapper<Self>) {
         switch style {
         case let .wrap(style):
             style(self)
         }
     }
     
-    func decorate(_ styles: [DecorateWrapper<Self>]) {
-        styles.forEach({ self.decorate($0) })
+    func apply(_ styles: [DecorateWrapper<Self>]) {
+        styles.forEach({ self.apply($0) })
     }
 }
 

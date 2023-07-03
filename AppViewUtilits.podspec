@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                      = "AppViewUtilits"
-  s.version                   = "1.2.3"
+  s.version                   = "1.2.5"
   s.summary                   = "AppViewUtilits"
   s.homepage                  = "https://github.com/PavelMoslienko/AppViewUtilits"
   s.license                   = { :type => "MIT", :file => "LICENSE" }

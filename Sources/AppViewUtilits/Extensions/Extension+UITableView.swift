@@ -29,14 +29,30 @@ extension NSObject: ClassNameProtocol {}
 
 public extension UITableView {
     
-    func register<T: UITableViewCell>(cellType: T.Type, bundle: Bundle? = nil) {
-        let className = cellType.className
-        let nib = UINib(nibName: className, bundle: bundle)
-        register(nib, forCellReuseIdentifier: className)
+    func registerCellClass(_ cellClass: AnyClass) {
+        let identifier = String.className(cellClass)
+        
+        self.register(cellClass, forCellReuseIdentifier: identifier)
     }
     
-    func register<T: UITableViewCell>(cellTypes: [T.Type], bundle: Bundle? = nil) {
-        cellTypes.forEach { register(cellType: $0, bundle: bundle) }
+    func registerCellNib(_ cellClass: AnyClass) {
+        let identifier = String.className(cellClass)
+        let nib = UINib(nibName: identifier, bundle: nil)
+        
+        self.register(nib, forCellReuseIdentifier: identifier)
+    }
+    
+    func registerHeaderFooterViewClass(_ viewClass: AnyClass) {
+        let identifier = String.className(viewClass)
+        
+        self.register(viewClass, forHeaderFooterViewReuseIdentifier: identifier)
+    }
+    
+    func registerHeaderFooterViewNib(_ viewClass: AnyClass) {
+        let identifier = String.className(viewClass)
+        let nib = UINib(nibName: identifier, bundle: nil)
+        
+        self.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
     func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {

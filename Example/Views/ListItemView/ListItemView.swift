@@ -15,7 +15,7 @@ class ListItemView: AppView {
     
     // MARK: - Outlet
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var actionButton: UIButton!
+    @IBOutlet private weak var actionButton: AppButton!
     
     @IBOutlet private weak var viewTopConstaint: NSLayoutConstraint!
     @IBOutlet private weak var viewBottomConstaint: NSLayoutConstraint!
@@ -26,7 +26,8 @@ class ListItemView: AppView {
         guard let model = self.model as? ListItemViewModel else { return }
         
         self.titleLabel.text = model.title
-        
+        self.actionButton.isEnabled = model.isEnabled
+        print("isEnabled - \(model.isEnabled)")
         self.viewTopConstaint.constant = model.inset.top
         self.viewBottomConstaint.constant = model.inset.bottom
         self.viewLeftConstaint.constant =  model.inset.left
@@ -34,19 +35,23 @@ class ListItemView: AppView {
     }
     
     override func setupComponents() {
+        self.actionButton.regularStyle = .actionButton()
+        self.actionButton.disabledStyle = .disabledButton()
         self.actionButton.setTitle("Action", for: .normal)
     }
     
     override func applyStyles() {
         self.backgroundColor = .white
-        self.titleLabel.decorate(.headerStyle())
+        self.titleLabel.apply(.headerStyle())
     }
     
     override func setupActions() {
-        self.actionButton.addAction(for: .touchUpInside, {
-            guard let model = self.model as? ListItemViewModel else { return }
+        self.actionButton.addAction {
+            guard let model = self.model as? ListItemViewModel else {
+                return
+            }
             model.actionCallback?()
-        })
+        }
     }
 }
 
@@ -58,6 +63,24 @@ extension DecorateWrapper where Element: UILabel {
             label.textAlignment = .left
             label.lineBreakMode = .byWordWrapping
             label.numberOfLines = 0
+        }
+    }
+}
+
+extension DecorateWrapper where Element: UIButton {
+    static func actionButton() -> DecorateWrapper {
+        return .wrap { btn in
+            btn.setTitleColor(.systemBlue, for: [])
+            btn.tintColor = .systemBlue
+            btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
+        }
+    }
+    
+    static func disabledButton() -> DecorateWrapper {
+        return .wrap { btn in
+            btn.setTitleColor(.systemGray, for: [])
+            btn.tintColor = .systemGray
+            btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         }
     }
 }
