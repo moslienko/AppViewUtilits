@@ -13,9 +13,7 @@ import SwiftUI
 public extension Color {
     
     init(hex string: String) {
-        var hex = string.hasPrefix("#")
-        ? String(string.dropFirst())
-        : string
+        var hex = string.hasPrefix("#") ? String(string.dropFirst()) : string
         guard hex.count == 3 || hex.count == 6
         else {
             self.init(white: 1.0)

@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
+#endif
 
 open class AppViewCollectionCell<T: AppViewCellIdentifiable>: UICollectionViewCell {
     
