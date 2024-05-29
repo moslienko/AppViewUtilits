@@ -59,6 +59,10 @@
 		956BBEA22633C1B8008AC0A6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBEA12633C1B8008AC0A6 /* Extension+UIColor.swift */; };
 		956BBEA82633C1FA008AC0A6 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBEA72633C1FA008AC0A6 /* Extension+UIImageView.swift */; };
 		956BBEC22633C8BF008AC0A6 /* Extension+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBEC12633C8BF008AC0A6 /* Extension+UIScrollView.swift */; };
+		957643892C06C57B00CFCF43 /* Extension+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957643882C06C57B00CFCF43 /* Extension+NSAttributedString.swift */; };
+		9576438B2C06C5CB00CFCF43 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438A2C06C5CB00CFCF43 /* Extension+Color.swift */; };
+		9576438D2C06C63B00CFCF43 /* Extension+NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */; };
+		9576438F2C06C67200CFCF43 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438E2C06C67200CFCF43 /* Extension+View.swift */; };
 		95C63855290CF96900A224B2 /* DebouncedFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6384C290CF96900A224B2 /* DebouncedFunction.swift */; };
 		95C63856290CF96900A224B2 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6384D290CF96900A224B2 /* AppVersion.swift */; };
 		95C63857290CF96900A224B2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6384E290CF96900A224B2 /* Reachability.swift */; };
@@ -168,6 +172,10 @@
 		956BBEA12633C1B8008AC0A6 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		956BBEA72633C1FA008AC0A6 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		956BBEC12633C8BF008AC0A6 /* Extension+UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIScrollView.swift"; sourceTree = "<group>"; };
+		957643882C06C57B00CFCF43 /* Extension+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSAttributedString.swift"; sourceTree = "<group>"; };
+		9576438A2C06C5CB00CFCF43 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSPredicate.swift"; sourceTree = "<group>"; };
+		9576438E2C06C67200CFCF43 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		95C6384C290CF96900A224B2 /* DebouncedFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncedFunction.swift; sourceTree = "<group>"; };
 		95C6384D290CF96900A224B2 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		95C6384E290CF96900A224B2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -403,6 +411,10 @@
 				950FB34626EDBC16008B63DB /* Extension+Optional.swift */,
 				950FB34826EDBC27008B63DB /* Extension+UIButton.swift */,
 				95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */,
+				957643882C06C57B00CFCF43 /* Extension+NSAttributedString.swift */,
+				9576438A2C06C5CB00CFCF43 /* Extension+Color.swift */,
+				9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */,
+				9576438E2C06C67200CFCF43 /* Extension+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -778,6 +790,7 @@
 			files = (
 				956BBDE52633AF9F008AC0A6 /* Extension+UIImage.swift in Sources */,
 				95C63865290CF98900A224B2 /* AppView.swift in Sources */,
+				9576438B2C06C5CB00CFCF43 /* Extension+Color.swift in Sources */,
 				95C63855290CF96900A224B2 /* DebouncedFunction.swift in Sources */,
 				956BBDF32633AF9F008AC0A6 /* Extension+CALayer.swift in Sources */,
 				956BBDF92633AF9F008AC0A6 /* Extension+UIView.swift in Sources */,
@@ -797,6 +810,7 @@
 				956BBDE62633AF9F008AC0A6 /* Extension+CAAnimationDelegate.swift in Sources */,
 				95C6385D290CF96900A224B2 /* LimitedTextField.swift in Sources */,
 				956BBDF72633AF9F008AC0A6 /* Extension+NSCountedSet.swift in Sources */,
+				9576438D2C06C63B00CFCF43 /* Extension+NSPredicate.swift in Sources */,
 				956BBDE42633AF9F008AC0A6 /* Extension+UIViewController.swift in Sources */,
 				956BBE722633B28F008AC0A6 /* Extension+UITableView.swift in Sources */,
 				95C63869290CF9EF00A224B2 /* Log.swift in Sources */,
@@ -817,6 +831,8 @@
 				956BBDE72633AF9F008AC0A6 /* Extension+UIBezierPath.swift in Sources */,
 				95E359DB2A5268FD00D2A036 /* NotificationObserver.swift in Sources */,
 				95C63858290CF96900A224B2 /* Decorate.swift in Sources */,
+				9576438F2C06C67200CFCF43 /* Extension+View.swift in Sources */,
+				957643892C06C57B00CFCF43 /* Extension+NSAttributedString.swift in Sources */,
 				9506EEFA2A484A1800C10046 /* AppButton.swift in Sources */,
 				956BBDF42633AF9F008AC0A6 /* Extension+UIApplication.swift in Sources */,
 				956BBDFA2633AF9F008AC0A6 /* Extension+Date.swift in Sources */,

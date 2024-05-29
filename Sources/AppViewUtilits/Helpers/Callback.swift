@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
+#endif
 
 public typealias DataCallback<T> = (T) -> Void
 public typealias Callback = () -> Void

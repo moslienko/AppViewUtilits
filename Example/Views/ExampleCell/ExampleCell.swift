@@ -7,7 +7,9 @@
 //
 
 import AppViewUtilits
+#if canImport(UIKit)
 import UIKit
+#endif
 
 class ExampleCell: AppViewTableCell<ExampleCellModel> {
     
