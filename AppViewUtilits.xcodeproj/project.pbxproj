@@ -304,12 +304,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9506EF032A486F8500C10046 /* UIComponents */ = {
+		9506EF032A486F8500C10046 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				956BBE6A2633B1D4008AC0A6 /* Enums */,
+				953310B22A37423C00D58A82 /* Cells */,
+				956BBE132633AFAD008AC0A6 /* AppView */,
+				95C63853290CF96900A224B2 /* ContentSizedTableView.swift */,
 				9506EEF92A484A1800C10046 /* AppButton.swift */,
+				95C63854290CF96900A224B2 /* LimitedTextField.swift */,
 			);
-			path = UIComponents;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		953310AD2A3741CE00D58A82 /* CollectionCell */ = {
@@ -369,7 +374,7 @@
 		95618A662A2B691700C2A944 /* AppViewUtilits */ = {
 			isa = PBXGroup;
 			children = (
-				956BBE132633AFAD008AC0A6 /* AppView */,
+				9506EF032A486F8500C10046 /* Components */,
 				956BBDBF2633AF9F008AC0A6 /* Extensions */,
 				956BBDD92633AF9F008AC0A6 /* Helpers */,
 			);
@@ -424,19 +429,14 @@
 		956BBDD92633AF9F008AC0A6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9506EF032A486F8500C10046 /* UIComponents */,
+				95D583E82C48FC6300783B07 /* Threads */,
 				95C6384D290CF96900A224B2 /* AppVersion.swift */,
-				95C63853290CF96900A224B2 /* ContentSizedTableView.swift */,
-				95C6384C290CF96900A224B2 /* DebouncedFunction.swift */,
 				95C6384F290CF96900A224B2 /* Decorate.swift */,
 				95C63850290CF96900A224B2 /* Environment.swift */,
-				95C63854290CF96900A224B2 /* LimitedTextField.swift */,
 				95C6384E290CF96900A224B2 /* Reachability.swift */,
-				95C63852290CF96900A224B2 /* ThreadSwitching.swift */,
 				95C63868290CF9EF00A224B2 /* Log.swift */,
 				953310C12A374F3200D58A82 /* Callback.swift */,
 				95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */,
-				95D583E62C48E33100783B07 /* RecursionFunction.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -444,12 +444,10 @@
 		956BBE132633AFAD008AC0A6 /* AppView */ = {
 			isa = PBXGroup;
 			children = (
-				953310B22A37423C00D58A82 /* Cells */,
 				95C63862290CF98900A224B2 /* AppView.swift */,
 				95C63864290CF98900A224B2 /* AppViewController.swift */,
 				95C63863290CF98900A224B2 /* AppViewModel.swift */,
 				953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */,
-				956BBE6A2633B1D4008AC0A6 /* Enums */,
 			);
 			path = AppView;
 			sourceTree = "<group>";
@@ -487,6 +485,16 @@
 				95C6385E290CF97900A224B2 /* AppViewTableCell.swift */,
 			);
 			path = TableCell;
+			sourceTree = "<group>";
+		};
+		95D583E82C48FC6300783B07 /* Threads */ = {
+			isa = PBXGroup;
+			children = (
+				95C6384C290CF96900A224B2 /* DebouncedFunction.swift */,
+				95C63852290CF96900A224B2 /* ThreadSwitching.swift */,
+				95D583E62C48E33100783B07 /* RecursionFunction.swift */,
+			);
+			path = Threads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

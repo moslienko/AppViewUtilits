@@ -7,8 +7,10 @@
 
 import Foundation
 
+///Retrieving app version information.
 public enum AppVersion {
     
+    /// App version information.
     public struct Info {
         public var appName: String
         public var version: String
@@ -16,44 +18,41 @@ public enum AppVersion {
         public var target: String
     }
     
+    /// Retrieves the app's version information.
     public static func getInfo() -> Info {
-        return Info(appName: self.name, version: self.version, build: self.build, target: self.target)
+        Info(appName: self.name, version: self.version, build: self.build, target: self.target)
     }
     
+    /// Retrieves the app's current language.
     public static func getLanguage() -> String? {
-        guard let language = Locale.current.languageCode else { return nil }
-        return language
+        Locale.current.languageCode
     }
     
+    /// Retrieves the app's display name.
     private static var name: String {
-        if let displayName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String {
-            return displayName
-        }
-        
-        return ""
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
     }
     
+    /// Retrieves the app's version number.
     private static var version: String {
-        let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-        return versionNumber ?? ""
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
     }
     
+    /// Retrieves the app's build number.
     private static var build: String {
-        let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
-        return buildNumber ?? ""
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
     }
     
+    /// Retrieves the app's target environment.
     private static var target: String {
         var target: String = ""
         #if DEBUG
         target = "D"
         #else
-        let isTestFlight = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
-        if isTestFlight {
+        if Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt" {
             target = "T"
         }
         #endif
         return target
     }
-    
 }
