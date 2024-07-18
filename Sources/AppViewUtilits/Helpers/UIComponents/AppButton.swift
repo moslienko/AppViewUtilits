@@ -16,6 +16,8 @@ public class AppButton: UIButton {
     private var didHighlight: Callback?
     private var didUnhighlight: Callback?
     
+    public var margin: CGFloat = 0.0
+    
     public var regularStyle: DecorateWrapper<AppButton>? {
         didSet {
             setupStyle()
@@ -70,6 +72,10 @@ public class AppButton: UIButton {
         } else {
             setTitle(title, for: [])
         }
+    }
+    
+    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        bounds.insetBy(dx: -margin, dy: -margin).contains(point)
     }
     
     public func addAction(_ action: @escaping Callback) {
