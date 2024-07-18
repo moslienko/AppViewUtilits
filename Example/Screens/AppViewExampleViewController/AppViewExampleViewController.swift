@@ -58,4 +58,17 @@ class AppViewExampleViewController: AppViewController {
     }
     
     override func setupView(with state: ViewState) {}
+    
+    func testRecursion(){
+        RecursionFunction(maxRetryCount: 5)
+            .performRecursion(
+                isCondition: {
+                    Int.random(in: 0...5) == 3
+                },
+                didHandleMethod: {
+                    print("Recursion success handler")
+                },
+                delay: 3.0
+            )
+    }
 }
