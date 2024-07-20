@@ -25,7 +25,6 @@ public class PresentActionEvent {
     func handleInputAction(_ action: PresenterInputAction) {}
 }
 
-
 // VC helper
 open class AppViewController: UIViewController, ViewActionEvent {
     

@@ -1,6 +1,6 @@
 //
-//  ContentSizedTableView.swift
-//  
+//  AppContentSizedTableView.swift
+//
 //
 //  Created by Pavel Moslienko on 24.04.2020.
 //
@@ -9,17 +9,16 @@
 import UIKit
 #endif
 
-internal final class ContentSizedTableView: UITableView {
+public final class AppContentSizedTableView: UITableView {
     
-    override var contentSize: CGSize {
+    override public var contentSize: CGSize {
         didSet {
             invalidateIntrinsicContentSize()
         }
     }
     
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         layoutIfNeeded()
         return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
     }
-    
 }
