@@ -6,6 +6,7 @@
 //  Copyright © 2021 moslienko. All rights reserved.
 //
 
+import AppViewUtilits
 #if canImport(UIKit)
 import UIKit
 #endif
@@ -18,5 +19,25 @@ public extension UIScrollView {
         self.setContentOffset(bottomOffset, animated: animated)
     }
     
+    // Display placeholder
+    func addPlaceholder(_ view: PlaceholderView) {
+        removePlaceholder()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(view)
+
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            view.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+        ])
+
+        self.layoutIfNeeded()
+    }
+    
+    // Remove placeholder
+    func removePlaceholder() {
+        self.subviews.first(where: { $0 is PlaceholderView })?.removeFromSuperview()
+    }
 }
 

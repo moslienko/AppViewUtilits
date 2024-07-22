@@ -60,6 +60,7 @@ class TableExampleViewController: AppViewController {
             type:  AppPlaceholder.emptyList,
             options: PlaceholderOptions(),
             didActionButtonTapped: {  [weak self] in
+                self?.tableView.removePlaceholder()
                 self?.navigationController?.popViewController(animated: true)
             }
         )
@@ -74,7 +75,6 @@ class TableExampleViewController: AppViewController {
                 button.backgroundColor = .systemGreen.withAlphaComponent(0.7)
             })
         )
-        view.isHidden = true
         return view
     }()
     
@@ -87,9 +87,7 @@ class TableExampleViewController: AppViewController {
     override func reloadData() {
         self.view.backgroundColor = .white
         self.navigationItem.title = "Table"
-        
-
-        
+                
         self.tableView.registerCellClass(ExampleCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -104,28 +102,7 @@ class TableExampleViewController: AppViewController {
         self.models = [section]
         self.tableView.reloadData()
         
-        
-        self.view.addSubview(placeholderView)
-
-        // Disable autoresizing mask constraints
-        placeholderView.translatesAutoresizingMaskIntoConstraints = false
-
-        // Activate constraints
-        NSLayoutConstraint.activate([
-            placeholderView.topAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.topAnchor),
-            placeholderView.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 0.0),
-            placeholderView.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 0.0),
-            placeholderView.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor)
-        ])
-        
-        let isVisible = true
-        if isVisible {
-            self.placeholderView.isHidden = false
-            self.tableView.tableHeaderView?.isHidden = true
-        } else {
-            self.placeholderView.isHidden = true
-            self.tableView.tableHeaderView?.isHidden = false
-        }
+        self.tableView.addPlaceholder(self.placeholderView)
     }
     
     override func setupView(with state: ViewState) {}

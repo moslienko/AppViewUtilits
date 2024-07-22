@@ -39,7 +39,7 @@ public struct PlaceholderContainerOptions {
         backgroundColor: UIColor = .clear,
         buttonLayout: PlaceholderButtonLayout = .center,
         buttonTopSpacing: CGFloat = 16.0,
-        textsSpacing: CGFloat = 16.0
+        textsSpacing: CGFloat = 8.0
     ) {
         self.insets = insets
         self.backgroundColor = backgroundColor
