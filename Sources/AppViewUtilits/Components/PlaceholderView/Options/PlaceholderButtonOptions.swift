@@ -31,8 +31,8 @@ public struct PlaceholderButtonOptions {
     ///   - bottomOffset: The bottom offset of the button.
     public init(
         height: CGFloat = 44.0,
-        leftOffset: CGFloat = 0.0,
-        rightOffset: CGFloat = 0.0,
+        leftOffset: CGFloat = 32.0,
+        rightOffset: CGFloat = 32.0,
         bottomOffset: CGFloat = 0.0
     ) {
         self.height = height

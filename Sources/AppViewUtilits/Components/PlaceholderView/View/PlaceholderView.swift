@@ -33,6 +33,12 @@ final public class PlaceholderView: AppView {
     public var didActionButtonTapped: Callback?
     
     // MARK: - Components
+    private(set) lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     private(set) lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -97,27 +103,52 @@ final public class PlaceholderView: AppView {
     // MARK: - Setup
     public override func setupComponents() {
         super.setupComponents()
-        backgroundColor = .clear
+        backgroundColor = self.options.containerOptions.backgroundColor
         
-        self.addSubview(stackView)
-        self.addSubview(reloadButton)
-        
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         reloadButton.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
         
+        self.addSubview(containerView)
+        containerView.addSubview(stackView)
+        containerView.addSubview(reloadButton)
+        
+        var stackOffset: CGFloat {
+            switch options.containerOptions.buttonLayout {
+            case .center:
+                return options.buttonOptions.height + options.containerOptions.buttonTopSpacing
+            case .bottom:
+                return 0.0
+            }
+        }
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            containerView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: self.options.containerOptions.insets.left),
+            containerView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: self.options.containerOptions.insets.right * -1),
+            containerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: self.options.containerOptions.insets.top),
+            containerView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: self.options.containerOptions.insets.bottom),
             
-            reloadButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 76.0),
-            reloadButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -76.0),
-            reloadButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -24.0),
+            stackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -stackOffset),
+            
+            iconImageView.heightAnchor.constraint(equalToConstant: self.options.iconOptions.height),
+            
+            reloadButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: self.options.buttonOptions.leftOffset),
+            reloadButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: self.options.buttonOptions.rightOffset * -1),
             reloadButton.heightAnchor.constraint(equalToConstant: self.options.buttonOptions.height),
-            
-            iconImageView.heightAnchor.constraint(equalToConstant: self.options.iconOptions.height)
         ])
-        layoutSubviews()
+        
+        switch options.containerOptions.buttonLayout {
+        case .center:
+            NSLayoutConstraint.activate([
+                reloadButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: self.options.containerOptions.buttonTopSpacing),
+            ])
+        case .bottom:
+            NSLayoutConstraint.activate([
+                reloadButton.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: self.options.buttonOptions.bottomOffset),
+            ])
+        }
     }
 }
 
@@ -126,7 +157,6 @@ public extension PlaceholderView {
     
     /// Configures the view with the provided placeholder type.
     func setupView(type: PlaceholderType) {
-        print("type - \(type)")
         iconImageView.image = type.icon
         titleLabel.text = type.title
         messageLabel.text = type.message
@@ -134,8 +164,10 @@ public extension PlaceholderView {
         reloadButton.setTitle(type.buttonTitle, for: [])
         reloadButton.isHidden = type.buttonTitle == nil
         
-        iconImageView.tintColor = .systemGray
-        iconImageView.contentMode = .scaleAspectFit
+        iconImageView.tintColor = options.iconOptions.tintColor
+        iconImageView.contentMode =  options.iconOptions.contentMode
+        
+        stackView.spacing = options.containerOptions.textsSpacing
     }
     
     // Applies styles to the title label, message label, and button.

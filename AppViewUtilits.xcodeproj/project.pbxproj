@@ -17,6 +17,8 @@
 		9506EEFB2A484AB200C10046 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310C12A374F3200D58A82 /* Callback.swift */; };
 		950FB34726EDBC16008B63DB /* Extension+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FB34626EDBC16008B63DB /* Extension+Optional.swift */; };
 		950FB34926EDBC27008B63DB /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FB34826EDBC27008B63DB /* Extension+UIButton.swift */; };
+		9526669C2C4DF69B00359D7C /* PlaceholderButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526669B2C4DF69B00359D7C /* PlaceholderButtonLayout.swift */; };
+		9526669E2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526669D2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift */; };
 		953310AF2A3741DF00D58A82 /* AppViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310AE2A3741DF00D58A82 /* AppViewCollectionCell.swift */; };
 		953310B12A3741FD00D58A82 /* AppViewSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */; };
 		953310B42A37424900D58A82 /* AppViewCellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310B32A37424900D58A82 /* AppViewCellIdentifiable.swift */; };
@@ -66,6 +68,14 @@
 		956BBEA82633C1FA008AC0A6 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBEA72633C1FA008AC0A6 /* Extension+UIImageView.swift */; };
 		956BBEC22633C8BF008AC0A6 /* Extension+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBEC12633C8BF008AC0A6 /* Extension+UIScrollView.swift */; };
 		956D7BF22C4A349E008DA659 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956D7BF12C4A349E008DA659 /* AppLabel.swift */; };
+		9574EF722C4CD97200066722 /* PlaceholderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF712C4CD97200066722 /* PlaceholderType.swift */; };
+		9574EF742C4CD97600066722 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF732C4CD97600066722 /* PlaceholderView.swift */; };
+		9574EF762C4CDB3700066722 /* AppStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF752C4CDB3700066722 /* AppStackView.swift */; };
+		9574EF7A2C4CF69000066722 /* PlaceholderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF792C4CF69000066722 /* PlaceholderOptions.swift */; };
+		9574EF7C2C4CF69800066722 /* PlaceholderIconOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF7B2C4CF69800066722 /* PlaceholderIconOptions.swift */; };
+		9574EF7E2C4CF6A000066722 /* PlaceholderButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF7D2C4CF6A000066722 /* PlaceholderButtonOptions.swift */; };
+		9574EF802C4CFAF400066722 /* PlaceholderViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF7F2C4CFAF400066722 /* PlaceholderViewStyle.swift */; };
+		9574EF832C4CFB1C00066722 /* DefaultPlaceholderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9574EF822C4CFB1C00066722 /* DefaultPlaceholderType.swift */; };
 		957643892C06C57B00CFCF43 /* Extension+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957643882C06C57B00CFCF43 /* Extension+NSAttributedString.swift */; };
 		9576438B2C06C5CB00CFCF43 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438A2C06C5CB00CFCF43 /* Extension+Color.swift */; };
 		9576438D2C06C63B00CFCF43 /* Extension+NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */; };
@@ -136,6 +146,8 @@
 		9506EEF92A484A1800C10046 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		950FB34626EDBC16008B63DB /* Extension+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Optional.swift"; sourceTree = "<group>"; };
 		950FB34826EDBC27008B63DB /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		9526669B2C4DF69B00359D7C /* PlaceholderButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderButtonLayout.swift; sourceTree = "<group>"; };
+		9526669D2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderContainerOptions.swift; sourceTree = "<group>"; };
 		953310AE2A3741DF00D58A82 /* AppViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewCollectionCell.swift; sourceTree = "<group>"; };
 		953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewSectionModel.swift; sourceTree = "<group>"; };
 		953310B32A37424900D58A82 /* AppViewCellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewCellIdentifiable.swift; sourceTree = "<group>"; };
@@ -186,6 +198,14 @@
 		956BBEA72633C1FA008AC0A6 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		956BBEC12633C8BF008AC0A6 /* Extension+UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIScrollView.swift"; sourceTree = "<group>"; };
 		956D7BF12C4A349E008DA659 /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
+		9574EF712C4CD97200066722 /* PlaceholderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderType.swift; sourceTree = "<group>"; };
+		9574EF732C4CD97600066722 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		9574EF752C4CDB3700066722 /* AppStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStackView.swift; sourceTree = "<group>"; };
+		9574EF792C4CF69000066722 /* PlaceholderOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderOptions.swift; sourceTree = "<group>"; };
+		9574EF7B2C4CF69800066722 /* PlaceholderIconOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderIconOptions.swift; sourceTree = "<group>"; };
+		9574EF7D2C4CF6A000066722 /* PlaceholderButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderButtonOptions.swift; sourceTree = "<group>"; };
+		9574EF7F2C4CFAF400066722 /* PlaceholderViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewStyle.swift; sourceTree = "<group>"; };
+		9574EF822C4CFB1C00066722 /* DefaultPlaceholderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlaceholderType.swift; sourceTree = "<group>"; };
 		957643882C06C57B00CFCF43 /* Extension+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSAttributedString.swift"; sourceTree = "<group>"; };
 		9576438A2C06C5CB00CFCF43 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSPredicate.swift"; sourceTree = "<group>"; };
@@ -319,6 +339,7 @@
 		9506EF032A486F8500C10046 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9574EF702C4CD95800066722 /* PlaceholderView */,
 				956BBE6A2633B1D4008AC0A6 /* Enums */,
 				953310B22A37423C00D58A82 /* Cells */,
 				956BBE132633AFAD008AC0A6 /* AppView */,
@@ -331,6 +352,7 @@
 				955856552C4B740100FDDD23 /* AppLoaderView.swift */,
 				955856572C4B7C0700FDDD23 /* AppTouchLabel.swift */,
 				955856592C4B7D4500FDDD23 /* AppScrollView.swift */,
+				9574EF752C4CDB3700066722 /* AppStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -503,6 +525,46 @@
 				95C6385E290CF97900A224B2 /* AppViewTableCell.swift */,
 			);
 			path = TableCell;
+			sourceTree = "<group>";
+		};
+		9574EF702C4CD95800066722 /* PlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				9574EF812C4CFB1700066722 /* Data */,
+				9574EF782C4CF68300066722 /* View */,
+				9574EF772C4CF67A00066722 /* Options */,
+			);
+			path = PlaceholderView;
+			sourceTree = "<group>";
+		};
+		9574EF772C4CF67A00066722 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				9574EF792C4CF69000066722 /* PlaceholderOptions.swift */,
+				9574EF7B2C4CF69800066722 /* PlaceholderIconOptions.swift */,
+				9574EF7D2C4CF6A000066722 /* PlaceholderButtonOptions.swift */,
+				9526669D2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		9574EF782C4CF68300066722 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9574EF712C4CD97200066722 /* PlaceholderType.swift */,
+				9574EF732C4CD97600066722 /* PlaceholderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9574EF812C4CFB1700066722 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9574EF822C4CFB1C00066722 /* DefaultPlaceholderType.swift */,
+				9574EF7F2C4CFAF400066722 /* PlaceholderViewStyle.swift */,
+				9526669B2C4DF69B00359D7C /* PlaceholderButtonLayout.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		95D583E82C48FC6300783B07 /* Threads */ = {
@@ -821,6 +883,7 @@
 				95C63865290CF98900A224B2 /* AppView.swift in Sources */,
 				9576438B2C06C5CB00CFCF43 /* Extension+Color.swift in Sources */,
 				95C63855290CF96900A224B2 /* DebouncedFunction.swift in Sources */,
+				9574EF7E2C4CF6A000066722 /* PlaceholderButtonOptions.swift in Sources */,
 				956D7BF22C4A349E008DA659 /* AppLabel.swift in Sources */,
 				956BBDF32633AF9F008AC0A6 /* Extension+CALayer.swift in Sources */,
 				956BBDF92633AF9F008AC0A6 /* Extension+UIView.swift in Sources */,
@@ -829,15 +892,20 @@
 				95C63857290CF96900A224B2 /* Reachability.swift in Sources */,
 				95C63861290CF97F00A224B2 /* ButtonState.swift in Sources */,
 				956BBDEB2633AF9F008AC0A6 /* Extension+UITextField.swift in Sources */,
+				9574EF7C2C4CF69800066722 /* PlaceholderIconOptions.swift in Sources */,
+				9574EF7A2C4CF69000066722 /* PlaceholderOptions.swift in Sources */,
 				95C63867290CF98900A224B2 /* AppViewController.swift in Sources */,
 				956BBDED2633AF9F008AC0A6 /* Extension+Sequence.swift in Sources */,
+				9574EF722C4CD97200066722 /* PlaceholderType.swift in Sources */,
 				956BBDF12633AF9F008AC0A6 /* Extension+FileManager.swift in Sources */,
 				956BBDEC2633AF9F008AC0A6 /* Extension+CGFloat.swift in Sources */,
+				9526669C2C4DF69B00359D7C /* PlaceholderButtonLayout.swift in Sources */,
 				9506EEFB2A484AB200C10046 /* Callback.swift in Sources */,
 				955856562C4B740100FDDD23 /* AppLoaderView.swift in Sources */,
 				95C63859290CF96900A224B2 /* Environment.swift in Sources */,
 				956BBDE92633AF9F008AC0A6 /* Extension+Dictionary.swift in Sources */,
 				955856582C4B7C0700FDDD23 /* AppTouchLabel.swift in Sources */,
+				9526669E2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift in Sources */,
 				956BBDE82633AF9F008AC0A6 /* Extension+UITabBar.swift in Sources */,
 				956BBDE62633AF9F008AC0A6 /* Extension+CAAnimationDelegate.swift in Sources */,
 				956BBDF72633AF9F008AC0A6 /* Extension+NSCountedSet.swift in Sources */,
@@ -854,6 +922,7 @@
 				956BBDF52633AF9F008AC0A6 /* Extension+UIWindow.swift in Sources */,
 				9558565A2C4B7D4500FDDD23 /* AppScrollView.swift in Sources */,
 				953310AF2A3741DF00D58A82 /* AppViewCollectionCell.swift in Sources */,
+				9574EF742C4CD97600066722 /* PlaceholderView.swift in Sources */,
 				956BBDF02633AF9F008AC0A6 /* Extension+Notifications.swift in Sources */,
 				956BBDEF2633AF9F008AC0A6 /* Extension+UILabel.swift in Sources */,
 				95C6385F290CF97900A224B2 /* AppViewTableCell.swift in Sources */,
@@ -867,12 +936,15 @@
 				95C63858290CF96900A224B2 /* Decorate.swift in Sources */,
 				9576438F2C06C67200CFCF43 /* Extension+View.swift in Sources */,
 				957643892C06C57B00CFCF43 /* Extension+NSAttributedString.swift in Sources */,
+				9574EF832C4CFB1C00066722 /* DefaultPlaceholderType.swift in Sources */,
 				9542A1252C4A378C001B78DA /* AppTextField.swift in Sources */,
 				9506EEFA2A484A1800C10046 /* AppButton.swift in Sources */,
 				956BBDF42633AF9F008AC0A6 /* Extension+UIApplication.swift in Sources */,
+				9574EF802C4CFAF400066722 /* PlaceholderViewStyle.swift in Sources */,
 				956BBDFA2633AF9F008AC0A6 /* Extension+Date.swift in Sources */,
 				95C6385C290CF96900A224B2 /* AppContentSizedTableView.swift in Sources */,
 				956BBDEA2633AF9F008AC0A6 /* Extension+Array.swift in Sources */,
+				9574EF762C4CDB3700066722 /* AppStackView.swift in Sources */,
 				956BBDF82633AF9F008AC0A6 /* Extension+Collection.swift in Sources */,
 				9542A1282C4A3A28001B78DA /* AppTextView.swift in Sources */,
 			);
