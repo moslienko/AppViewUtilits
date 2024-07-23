@@ -17,6 +17,9 @@
 		9506EEFB2A484AB200C10046 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310C12A374F3200D58A82 /* Callback.swift */; };
 		950FB34726EDBC16008B63DB /* Extension+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FB34626EDBC16008B63DB /* Extension+Optional.swift */; };
 		950FB34926EDBC27008B63DB /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FB34826EDBC27008B63DB /* Extension+UIButton.swift */; };
+		951BD2912C4F3ED900CF4EAF /* AppAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BD2902C4F3ED900CF4EAF /* AppAlertController.swift */; };
+		951BD2942C4F413500CF4EAF /* AppAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BD2932C4F413500CF4EAF /* AppAlertViewModel.swift */; };
+		951BD2962C4F415500CF4EAF /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BD2952C4F415500CF4EAF /* AlertAction.swift */; };
 		9526669C2C4DF69B00359D7C /* PlaceholderButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526669B2C4DF69B00359D7C /* PlaceholderButtonLayout.swift */; };
 		9526669E2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526669D2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift */; };
 		953310AF2A3741DF00D58A82 /* AppViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310AE2A3741DF00D58A82 /* AppViewCollectionCell.swift */; };
@@ -146,6 +149,9 @@
 		9506EEF92A484A1800C10046 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		950FB34626EDBC16008B63DB /* Extension+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Optional.swift"; sourceTree = "<group>"; };
 		950FB34826EDBC27008B63DB /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		951BD2902C4F3ED900CF4EAF /* AppAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertController.swift; sourceTree = "<group>"; };
+		951BD2932C4F413500CF4EAF /* AppAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertViewModel.swift; sourceTree = "<group>"; };
+		951BD2952C4F415500CF4EAF /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		9526669B2C4DF69B00359D7C /* PlaceholderButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderButtonLayout.swift; sourceTree = "<group>"; };
 		9526669D2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderContainerOptions.swift; sourceTree = "<group>"; };
 		953310AE2A3741DF00D58A82 /* AppViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewCollectionCell.swift; sourceTree = "<group>"; };
@@ -339,6 +345,7 @@
 		9506EF032A486F8500C10046 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				951BD2922C4F3EFA00CF4EAF /* AppAlert */,
 				9574EF702C4CD95800066722 /* PlaceholderView */,
 				956BBE6A2633B1D4008AC0A6 /* Enums */,
 				953310B22A37423C00D58A82 /* Cells */,
@@ -355,6 +362,16 @@
 				9574EF752C4CDB3700066722 /* AppStackView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		951BD2922C4F3EFA00CF4EAF /* AppAlert */ = {
+			isa = PBXGroup;
+			children = (
+				951BD2902C4F3ED900CF4EAF /* AppAlertController.swift */,
+				951BD2932C4F413500CF4EAF /* AppAlertViewModel.swift */,
+				951BD2952C4F415500CF4EAF /* AlertAction.swift */,
+			);
+			path = AppAlert;
 			sourceTree = "<group>";
 		};
 		953310AD2A3741CE00D58A82 /* CollectionCell */ = {
@@ -886,6 +903,7 @@
 				9574EF7E2C4CF6A000066722 /* PlaceholderButtonOptions.swift in Sources */,
 				956D7BF22C4A349E008DA659 /* AppLabel.swift in Sources */,
 				956BBDF32633AF9F008AC0A6 /* Extension+CALayer.swift in Sources */,
+				951BD2942C4F413500CF4EAF /* AppAlertViewModel.swift in Sources */,
 				956BBDF92633AF9F008AC0A6 /* Extension+UIView.swift in Sources */,
 				956BBDF22633AF9F008AC0A6 /* Extension+Int.swift in Sources */,
 				95C6386B290D0EC600A224B2 /* Extensions+SKProduct.swift in Sources */,
@@ -936,6 +954,7 @@
 				95C63858290CF96900A224B2 /* Decorate.swift in Sources */,
 				9576438F2C06C67200CFCF43 /* Extension+View.swift in Sources */,
 				957643892C06C57B00CFCF43 /* Extension+NSAttributedString.swift in Sources */,
+				951BD2962C4F415500CF4EAF /* AlertAction.swift in Sources */,
 				9574EF832C4CFB1C00066722 /* DefaultPlaceholderType.swift in Sources */,
 				9542A1252C4A378C001B78DA /* AppTextField.swift in Sources */,
 				9506EEFA2A484A1800C10046 /* AppButton.swift in Sources */,
@@ -947,6 +966,7 @@
 				9574EF762C4CDB3700066722 /* AppStackView.swift in Sources */,
 				956BBDF82633AF9F008AC0A6 /* Extension+Collection.swift in Sources */,
 				9542A1282C4A3A28001B78DA /* AppTextView.swift in Sources */,
+				951BD2912C4F3ED900CF4EAF /* AppAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

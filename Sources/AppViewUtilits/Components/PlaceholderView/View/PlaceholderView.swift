@@ -34,8 +34,7 @@ final public class PlaceholderView: AppView {
     
     // MARK: - Components
     private(set) lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .clear
+        let view = UIView(backgroundColor: .clear)
         return view
     }()
     

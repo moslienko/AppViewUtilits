@@ -136,6 +136,11 @@ public extension UIView {
         return image
     }
     
+    // MARK: - Init
+    convenience init(backgroundColor: UIColor) {
+        self.init(frame: .zero)
+        self.backgroundColor = backgroundColor
+    }
 }
 
 // MARK: - Blur
