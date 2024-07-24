@@ -11,6 +11,6 @@ import Foundation
 import UIKit
 #endif
 
-public typealias DataCallback<T> = (T) -> Void
 public typealias Callback = () -> Void
-
+public typealias DataCallback<T> = (T) -> Void
+public typealias ValueCallback<T> = () -> T

@@ -41,7 +41,7 @@ class ListItemView: AppView {
     }
     
     override func applyStyles() {
-        self.backgroundColor = .white
+        self.backgroundColor = .secondarySystemBackground
         self.titleLabel.apply(.headerStyle())
     }
     
@@ -58,7 +58,7 @@ class ListItemView: AppView {
 extension DecorateWrapper where Element: UILabel {
     static func headerStyle() -> DecorateWrapper {
         return .wrap { label in
-            label.textColor = .black
+            label.textColor = .label
             label.font = UIFont.boldSystemFont(ofSize: 14.0)
             label.textAlignment = .left
             label.lineBreakMode = .byWordWrapping
@@ -79,7 +79,7 @@ extension DecorateWrapper where Element: UIButton {
     static func disabledButton() -> DecorateWrapper {
         return .wrap { btn in
             btn.setTitleColor(.systemGray, for: [])
-            btn.tintColor = .systemGray
+            btn.tintColor = .secondaryLabel
             btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         }
     }

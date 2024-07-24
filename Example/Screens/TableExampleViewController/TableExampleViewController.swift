@@ -85,7 +85,7 @@ class TableExampleViewController: AppViewController {
     }
     
     override func reloadData() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemGroupedBackground
         self.navigationItem.title = "Table"
                 
         self.tableView.registerCellClass(ExampleCell.self)

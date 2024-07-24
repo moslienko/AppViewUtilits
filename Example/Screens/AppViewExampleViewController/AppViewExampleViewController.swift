@@ -22,14 +22,26 @@ class AppViewExampleViewController: AppViewController {
     @IBOutlet private weak var enableListItemView: ListItemView!
     
     var isEnabledBtns = true
+    var isDarkTheme = false {
+        didSet {
+            print("setAppTheme - \(isDarkTheme)")
+            AppThemeManager.default.setAppTheme()
+            self.setupView()
+        }
+    }
     
     public class var fromXib: AppViewExampleViewController {
         AppViewExampleViewController(nibName: "AppViewExampleViewController", bundle: nil)
     }
     
     override func reloadData() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemGroupedBackground
         self.navigationItem.title = "App View"
+        self.setupView()
+
+        AppThemeManager.default.setOverrideUserInterfaceStyleCallback = {
+            self.isDarkTheme ? .dark : .light
+        }
         
         let itemModel = ListItemViewModel(title: "Hello world!", isEnabled: isEnabledBtns)
         itemModel.actionCallback = {
@@ -58,6 +70,16 @@ class AppViewExampleViewController: AppViewController {
     }
     
     override func setupView(with state: ViewState) {}
+    
+    func setupView() {
+        self.navigationItem.rightBarButtonItem = AppBarButtonItem(
+            icon: self.isDarkTheme ? UIImage(systemName: "sun.max") : UIImage(systemName: "moon"),
+            style: .done,
+            action: {
+                self.isDarkTheme.toggle()
+            }
+        )
+    }
     
     func testRecursion(){
         RecursionFunction(maxRetryCount: 5)
