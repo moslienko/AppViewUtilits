@@ -85,6 +85,7 @@
 		9576438D2C06C63B00CFCF43 /* Extension+NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */; };
 		9576438F2C06C67200CFCF43 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576438E2C06C67200CFCF43 /* Extension+View.swift */; };
 		95967CCB2C50A7DB0030CCD6 /* AppBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95967CCA2C50A7DB0030CCD6 /* AppBarButtonItem.swift */; };
+		95967CCD2C50E9980030CCD6 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95967CCC2C50E9980030CCD6 /* AppLayout.swift */; };
 		95C63855290CF96900A224B2 /* DebouncedFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6384C290CF96900A224B2 /* DebouncedFunction.swift */; };
 		95C63856290CF96900A224B2 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6384D290CF96900A224B2 /* AppVersion.swift */; };
 		95C63857290CF96900A224B2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6384E290CF96900A224B2 /* Reachability.swift */; };
@@ -220,6 +221,7 @@
 		9576438C2C06C63B00CFCF43 /* Extension+NSPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSPredicate.swift"; sourceTree = "<group>"; };
 		9576438E2C06C67200CFCF43 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		95967CCA2C50A7DB0030CCD6 /* AppBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarButtonItem.swift; sourceTree = "<group>"; };
+		95967CCC2C50E9980030CCD6 /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
 		95C6384C290CF96900A224B2 /* DebouncedFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncedFunction.swift; sourceTree = "<group>"; };
 		95C6384D290CF96900A224B2 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		95C6384E290CF96900A224B2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 		953310B22A37423C00D58A82 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */,
 				953310AD2A3741CE00D58A82 /* CollectionCell */,
 				956BBEAD2633C83E008AC0A6 /* TableCell */,
 				953310B32A37424900D58A82 /* AppViewCellIdentifiable.swift */,
@@ -500,6 +503,7 @@
 				953310C12A374F3200D58A82 /* Callback.swift */,
 				95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */,
 				951BD2982C4FDA6A00CF4EAF /* AppThemeManager.swift */,
+				95967CCC2C50E9980030CCD6 /* AppLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,7 +514,6 @@
 				95C63862290CF98900A224B2 /* AppView.swift */,
 				95C63864290CF98900A224B2 /* AppViewController.swift */,
 				95C63863290CF98900A224B2 /* AppViewModel.swift */,
-				953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */,
 			);
 			path = AppView;
 			sourceTree = "<group>";
@@ -929,6 +932,7 @@
 				955856562C4B740100FDDD23 /* AppLoaderView.swift in Sources */,
 				95C63859290CF96900A224B2 /* Environment.swift in Sources */,
 				956BBDE92633AF9F008AC0A6 /* Extension+Dictionary.swift in Sources */,
+				95967CCD2C50E9980030CCD6 /* AppLayout.swift in Sources */,
 				955856582C4B7C0700FDDD23 /* AppTouchLabel.swift in Sources */,
 				9526669E2C4DF6DC00359D7C /* PlaceholderContainerOptions.swift in Sources */,
 				956BBDE82633AF9F008AC0A6 /* Extension+UITabBar.swift in Sources */,
