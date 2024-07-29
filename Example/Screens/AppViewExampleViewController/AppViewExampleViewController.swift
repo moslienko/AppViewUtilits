@@ -32,6 +32,11 @@ class AppViewExampleViewController: AppViewController {
         return view
     }()
     
+    private lazy var layoutTestingView: UIView = {
+        let view = UIView(backgroundColor: .systemRed)
+        return view
+    }()
+    
     var isEnabledBtns = true
     var isDarkTheme = false {
         didSet {
@@ -70,6 +75,10 @@ class AppViewExampleViewController: AppViewController {
             self.listItemView.updateView()
             tableLinkModel.isEnabled = self.isEnabledBtns
             self.tableLinkListItemView.updateView()
+            
+            let newTestableViewWidth: CGFloat = self.layoutTestingView.bounds.width == 64 ? 200 : 64
+            print("newTestableViewWidth - \(newTestableViewWidth)")
+            self.layoutTestingView.layout.width(newTestableViewWidth)
         }
         self.enableListItemView.model = setEnableModel
         
@@ -107,6 +116,13 @@ class AppViewExampleViewController: AppViewController {
             .top(to: enableListItemView.bottomAnchor)
             .leading(to: self.view.leadingAnchor)
             .trailing(to: self.view.trailingAnchor)
+        
+        layoutTestingView.layout
+            .addToSuperview(self.view)
+            .width(64.0)
+            .height(64.0)
+            .bottom(to: self.view.safeAreaLayoutGuide.bottomAnchor)
+            .leading(to: self.view.safeAreaLayoutGuide.leadingAnchor, offset: 8)
     }
     
     func testRecursion(){
