@@ -27,7 +27,6 @@
 		953310B12A3741FD00D58A82 /* AppViewSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */; };
 		953310B42A37424900D58A82 /* AppViewCellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310B32A37424900D58A82 /* AppViewCellIdentifiable.swift */; };
 		953310B92A37440B00D58A82 /* TableExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310B82A37440B00D58A82 /* TableExampleViewController.swift */; };
-		953310BB2A37440F00D58A82 /* TableExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953310BA2A37440F00D58A82 /* TableExampleViewController.xib */; };
 		953310BE2A37465F00D58A82 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310BD2A37465F00D58A82 /* ExampleCell.swift */; };
 		953310C02A37466400D58A82 /* ExampleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310BF2A37466400D58A82 /* ExampleCellModel.swift */; };
 		9542A1252C4A378C001B78DA /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542A1242C4A378C001B78DA /* AppTextField.swift */; };
@@ -64,8 +63,6 @@
 		956BBE722633B28F008AC0A6 /* Extension+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBE712633B28F008AC0A6 /* Extension+UITableView.swift */; };
 		956BBE7A2633B396008AC0A6 /* ListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBE792633B396008AC0A6 /* ListItemViewModel.swift */; };
 		956BBE842633B39B008AC0A6 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBE832633B39B008AC0A6 /* ListItemView.swift */; };
-		956BBE8A2633B39E008AC0A6 /* ListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BBE892633B39E008AC0A6 /* ListItemView.xib */; };
-		956BBE902633BA2C008AC0A6 /* AppViewExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956BBE8F2633BA2C008AC0A6 /* AppViewExampleViewController.xib */; };
 		956BBE962633BFA7008AC0A6 /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBE952633BFA7008AC0A6 /* Extension+Encodable.swift */; };
 		956BBE9C2633C151008AC0A6 /* Extension+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBE9B2633C151008AC0A6 /* Extension+UICollectionView.swift */; };
 		956BBEA22633C1B8008AC0A6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BBEA12633C1B8008AC0A6 /* Extension+UIColor.swift */; };
@@ -162,7 +159,6 @@
 		953310B02A3741FD00D58A82 /* AppViewSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewSectionModel.swift; sourceTree = "<group>"; };
 		953310B32A37424900D58A82 /* AppViewCellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewCellIdentifiable.swift; sourceTree = "<group>"; };
 		953310B82A37440B00D58A82 /* TableExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableExampleViewController.swift; sourceTree = "<group>"; };
-		953310BA2A37440F00D58A82 /* TableExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableExampleViewController.xib; sourceTree = "<group>"; };
 		953310BD2A37465F00D58A82 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		953310BF2A37466400D58A82 /* ExampleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCellModel.swift; sourceTree = "<group>"; };
 		953310C12A374F3200D58A82 /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
@@ -200,8 +196,6 @@
 		956BBE712633B28F008AC0A6 /* Extension+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITableView.swift"; sourceTree = "<group>"; };
 		956BBE792633B396008AC0A6 /* ListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewModel.swift; sourceTree = "<group>"; };
 		956BBE832633B39B008AC0A6 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
-		956BBE892633B39E008AC0A6 /* ListItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemView.xib; sourceTree = "<group>"; };
-		956BBE8F2633BA2C008AC0A6 /* AppViewExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppViewExampleViewController.xib; sourceTree = "<group>"; };
 		956BBE952633BFA7008AC0A6 /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
 		956BBE9B2633C151008AC0A6 /* Extension+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionView.swift"; sourceTree = "<group>"; };
 		956BBEA12633C1B8008AC0A6 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -404,7 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				3D9C43252274629B000A6585 /* AppViewExampleViewController.swift */,
-				956BBE8F2633BA2C008AC0A6 /* AppViewExampleViewController.xib */,
 			);
 			path = AppViewExampleViewController;
 			sourceTree = "<group>";
@@ -413,7 +406,6 @@
 			isa = PBXGroup;
 			children = (
 				953310B82A37440B00D58A82 /* TableExampleViewController.swift */,
-				953310BA2A37440F00D58A82 /* TableExampleViewController.xib */,
 			);
 			path = TableExampleViewController;
 			sourceTree = "<group>";
@@ -540,7 +532,6 @@
 			children = (
 				956BBE792633B396008AC0A6 /* ListItemViewModel.swift */,
 				956BBE832633B39B008AC0A6 /* ListItemView.swift */,
-				956BBE892633B39E008AC0A6 /* ListItemView.xib */,
 			);
 			path = ListItemView;
 			sourceTree = "<group>";
@@ -815,10 +806,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953310BB2A37440F00D58A82 /* TableExampleViewController.xib in Resources */,
-				956BBE8A2633B39E008AC0A6 /* ListItemView.xib in Resources */,
 				3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */,
-				956BBE902633BA2C008AC0A6 /* AppViewExampleViewController.xib in Resources */,
 				3D9C432B2274629C000A6585 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

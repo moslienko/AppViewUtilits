@@ -17,9 +17,20 @@ import AppViewUtilits
 class AppViewExampleViewController: AppViewController {
     
     // MARK: Properties
-    @IBOutlet private weak var listItemView: ListItemView!
-    @IBOutlet private weak var tableLinkListItemView: ListItemView!
-    @IBOutlet private weak var enableListItemView: ListItemView!
+    private lazy var listItemView: ListItemView = {
+        let view = ListItemView()
+        return view
+    }()
+    
+    private lazy var tableLinkListItemView: ListItemView = {
+        let view = ListItemView()
+        return view
+    }()
+    
+    private lazy var enableListItemView: ListItemView = {
+        let view = ListItemView()
+        return view
+    }()
     
     var isEnabledBtns = true
     var isDarkTheme = false {
@@ -29,11 +40,7 @@ class AppViewExampleViewController: AppViewController {
             self.setupView()
         }
     }
-    
-    public class var fromXib: AppViewExampleViewController {
-        AppViewExampleViewController(nibName: "AppViewExampleViewController", bundle: nil)
-    }
-    
+
     override func reloadData() {
         self.view.backgroundColor = .systemGroupedBackground
         self.navigationItem.title = "App View"
@@ -79,6 +86,27 @@ class AppViewExampleViewController: AppViewController {
                 self.isDarkTheme.toggle()
             }
         )
+        
+        listItemView.layout
+            .addToSuperview(self.view)
+            .height(64.0)
+            .top(to: self.view.safeAreaLayoutGuide.topAnchor)
+            .leading(to: self.view.leadingAnchor)
+            .trailing(to: self.view.trailingAnchor)
+        
+        enableListItemView.layout
+            .addToSuperview(self.view)
+            .height(64.0)
+            .top(to: listItemView.bottomAnchor)
+            .leading(to: self.view.leadingAnchor)
+            .trailing(to: self.view.trailingAnchor)
+        
+        tableLinkListItemView.layout
+            .addToSuperview(self.view)
+            .height(64.0)
+            .top(to: enableListItemView.bottomAnchor)
+            .leading(to: self.view.leadingAnchor)
+            .trailing(to: self.view.trailingAnchor)
     }
     
     func testRecursion(){

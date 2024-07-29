@@ -53,7 +53,11 @@ enum AppPlaceholder: PlaceholderType {
 class TableExampleViewController: AppViewController {
     
     // MARK: Properties
-    @IBOutlet private weak var tableView: UITableView!
+    
+    private lazy var tableView: UITableView = {
+        let view = UITableView()
+        return view
+    }()
     
     private(set) lazy var placeholderView: PlaceholderView = {
         let view = PlaceholderView(
@@ -80,19 +84,47 @@ class TableExampleViewController: AppViewController {
     
     private var models: [[AppViewCellIdentifiable]] = []
     
-    public class var fromXib: TableExampleViewController {
-        TableExampleViewController(nibName: "TableExampleViewController", bundle: nil)
-    }
-    
     override func reloadData() {
         self.view.backgroundColor = .systemGroupedBackground
         self.navigationItem.title = "Table"
                 
+        self.tableView.layout.addToSuperview(self.view)
+        self.tableView.layout.edgesToSuperview()
+        
         self.tableView.registerCellClass(ExampleCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.separatorStyle = .singleLine
         
+        self.setupTableData()
+        self.tableView.reloadData()
+                
+        self.setupComponnents()
+    }
+    
+    func setupComponnents() {
+        self.navigationItem.rightBarButtonItem = AppBarButtonItem(
+            icon: self.models.isEmpty ? UIImage(systemName: "plus.app") : UIImage(systemName: "clear"),
+            style: .done,
+            action: {
+                if self.models.isEmpty {
+                    self.tableView.removePlaceholder()
+                    self.setupTableData()
+                    self.tableView.reloadData()
+                } else {
+                    self.models = []
+                    self.tableView.reloadData()
+                    self.tableView.addPlaceholder(self.placeholderView)
+                }
+                
+                self.setupComponnents()
+            }
+        )
+    }
+    
+    override func setupView(with state: ViewState) {}
+    
+    private func setupTableData() {
         var section: [AppViewCellIdentifiable] = []
         
         for i in 1...10 {
@@ -100,19 +132,14 @@ class TableExampleViewController: AppViewController {
             section += [cellModel]
         }
         self.models = [section]
-        self.tableView.reloadData()
-        
-        self.tableView.addPlaceholder(self.placeholderView)
     }
-    
-    override func setupView(with state: ViewState) {}
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension TableExampleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        0 //models.count
+        models.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
