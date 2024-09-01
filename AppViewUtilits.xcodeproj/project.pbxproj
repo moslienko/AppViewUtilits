@@ -97,6 +97,7 @@
 		95C63867290CF98900A224B2 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63864290CF98900A224B2 /* AppViewController.swift */; };
 		95C63869290CF9EF00A224B2 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C63868290CF9EF00A224B2 /* Log.swift */; };
 		95C6386B290D0EC600A224B2 /* Extensions+SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */; };
+		95C9BD232C840C0100B902A8 /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C9BD222C840C0100B902A8 /* EventObject.swift */; };
 		95D583E72C48E33100783B07 /* RecursionFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D583E62C48E33100783B07 /* RecursionFunction.swift */; };
 		95E359DB2A5268FD00D2A036 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */; };
 /* End PBXBuildFile section */
@@ -230,6 +231,7 @@
 		95C63864290CF98900A224B2 /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		95C63868290CF9EF00A224B2 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		95C6386A290D0EC600A224B2 /* Extensions+SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+SKProduct.swift"; sourceTree = "<group>"; };
+		95C9BD222C840C0100B902A8 /* EventObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
 		95D583E62C48E33100783B07 /* RecursionFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursionFunction.swift; sourceTree = "<group>"; };
 		95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -496,6 +498,7 @@
 				95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */,
 				951BD2982C4FDA6A00CF4EAF /* AppThemeManager.swift */,
 				95967CCC2C50E9980030CCD6 /* AppLayout.swift */,
+				95C9BD222C840C0100B902A8 /* EventObject.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -908,6 +911,7 @@
 				95C63857290CF96900A224B2 /* Reachability.swift in Sources */,
 				95C63861290CF97F00A224B2 /* ButtonState.swift in Sources */,
 				956BBDEB2633AF9F008AC0A6 /* Extension+UITextField.swift in Sources */,
+				95C9BD232C840C0100B902A8 /* EventObject.swift in Sources */,
 				9574EF7C2C4CF69800066722 /* PlaceholderIconOptions.swift in Sources */,
 				9574EF7A2C4CF69000066722 /* PlaceholderOptions.swift in Sources */,
 				95C63867290CF98900A224B2 /* AppViewController.swift in Sources */,
