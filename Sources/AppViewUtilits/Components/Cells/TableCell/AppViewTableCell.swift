@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 open class AppViewTableCell<T: AppViewCellIdentifiable>: UITableViewCell {
     
@@ -20,3 +19,5 @@ open class AppViewTableCell<T: AppViewCellIdentifiable>: UITableViewCell {
     
     open func updateView() { }
 }
+
+#endif

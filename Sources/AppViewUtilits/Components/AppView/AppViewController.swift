@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // View
 public protocol ViewState {}
@@ -73,3 +72,5 @@ open class AppViewController: UIViewController, ViewActionEvent {
 }
 
 public protocol ViewComponents {}
+
+#endif

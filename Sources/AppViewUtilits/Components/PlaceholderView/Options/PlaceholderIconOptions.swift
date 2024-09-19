@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // Options for configuring the appearance of a placeholder icon.
 public struct PlaceholderIconOptions {
@@ -36,3 +35,5 @@ public struct PlaceholderIconOptions {
         self.contentMode = contentMode
     }
 }
+
+#endif

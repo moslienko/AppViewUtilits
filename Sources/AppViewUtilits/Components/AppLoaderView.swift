@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppLoaderView: AppView {
     
@@ -48,3 +47,5 @@ private extension AppLoaderView {
         ])
     }
 }
+
+#endif

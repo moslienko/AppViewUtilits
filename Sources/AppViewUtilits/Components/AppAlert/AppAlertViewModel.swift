@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 /// Represents the model for configuring an `AppAlertController`.
 public struct AppAlertViewModel {
@@ -47,3 +46,5 @@ public struct AppAlertViewModel {
         self.preventMultipleAlerts = preventMultipleAlerts
     }
 }
+
+#endif

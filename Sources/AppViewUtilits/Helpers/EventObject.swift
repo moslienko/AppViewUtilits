@@ -10,6 +10,7 @@ import Combine
 import Foundation
 
 /// Protocol for subscribers who can receive events.
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public protocol EventReceiver {
     associatedtype Event
@@ -31,6 +32,7 @@ public protocol EventReceiver {
 }
 
 /// Protocol for senders that can send events.
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public protocol EventNotifier {
     associatedtype Event
@@ -44,6 +46,7 @@ public protocol EventNotifier {
 }
 
 /// Class for sending and receiving events.
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public class EventObject<Event>: EventNotifier, EventReceiver {
     

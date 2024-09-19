@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIView {
     
@@ -167,6 +166,8 @@ public extension Bluring where Self: UIView {
 }
 
 extension UIView: Bluring {}
+
+#endif
 
 private func cast<T, U>(_ value: T) -> U? {
     return value as? U

@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppButton: UIButton {
     
@@ -133,3 +132,5 @@ public class AppButton: UIButton {
         didUnhighlight?()
     }
 }
+
+#endif

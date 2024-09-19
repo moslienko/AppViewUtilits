@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIWindow {
     
@@ -31,3 +30,4 @@ public extension UIWindow {
     
 }
 
+#endif

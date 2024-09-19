@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // Default empty placeholder type
 enum DefaultPlaceholderType: PlaceholderType {
@@ -30,3 +29,5 @@ enum DefaultPlaceholderType: PlaceholderType {
         nil
     }
 }
+
+#endif

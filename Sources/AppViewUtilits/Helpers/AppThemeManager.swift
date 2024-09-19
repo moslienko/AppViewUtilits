@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // Dynamic change app appearance
 @available(iOS 13.0, *)
@@ -38,3 +37,5 @@ public class AppThemeManager {
             })
     }
 }
+
+#endif

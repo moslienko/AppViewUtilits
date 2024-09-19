@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension DecorateWrapper where Element: UILabel {
     
@@ -53,3 +52,5 @@ public extension DecorateWrapper where Element: AppButton {
         }
     }
 }
+
+#endif

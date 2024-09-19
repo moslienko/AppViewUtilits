@@ -9,7 +9,6 @@
 import AppViewUtilits
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIScrollView {
     
@@ -41,3 +40,4 @@ public extension UIScrollView {
     }
 }
 
+#endif

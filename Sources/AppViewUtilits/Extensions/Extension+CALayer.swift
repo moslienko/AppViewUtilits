@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension CALayer {
     
@@ -27,3 +26,5 @@ public extension CALayer {
     }
     
 }
+
+#endif

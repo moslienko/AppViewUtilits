@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIImageView {
     func imageFromURL(url: URL?, placeholder: UIImage? = nil) {
@@ -50,3 +49,4 @@ public extension UIImageView {
     }
 }
 
+#endif

@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppScrollView: UIScrollView {
     
@@ -70,3 +69,5 @@ private extension AppScrollView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
+
+#endif

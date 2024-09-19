@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 open class AppViewCollectionCell<T: AppViewCellIdentifiable>: UICollectionViewCell {
     
@@ -21,3 +20,5 @@ open class AppViewCollectionCell<T: AppViewCellIdentifiable>: UICollectionViewCe
     
     open func updateView() { }
 }
+
+#endif

@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UICollectionView {
     
@@ -48,3 +47,5 @@ public extension UICollectionView {
                  withReuseIdentifier: footer.className)
     }
 }
+
+#endif

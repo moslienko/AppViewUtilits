@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 fileprivate enum SlideAnimation {
     case left, right
@@ -53,3 +52,5 @@ extension UIView: CAAnimationDelegate {
         completionDelegate()
     }
 }
+
+#endif

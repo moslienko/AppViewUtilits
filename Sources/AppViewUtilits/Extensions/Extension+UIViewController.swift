@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIViewController {
     
@@ -67,3 +66,5 @@ public extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+#endif

@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 /// A custom `UIAlertController` subclass for presenting alerts.
 public class AppAlertController: UIAlertController {
@@ -76,3 +75,5 @@ private extension AppAlertController {
         self.view.tintColor = model.tintColor
     }
 }
+
+#endif

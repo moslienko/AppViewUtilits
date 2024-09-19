@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 /// A view that displays a placeholder
 final public class PlaceholderView: AppView {
@@ -190,3 +189,5 @@ public extension PlaceholderView {
         self.reloadButton.highlightedStyle = highlightedStyle
     }
 }
+
+#endif

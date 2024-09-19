@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppBarButtonItem: UIBarButtonItem {
     
@@ -58,3 +57,5 @@ public extension AppBarButtonItem {
         self.didButtonTapped?()
     }
 }
+
+#endif

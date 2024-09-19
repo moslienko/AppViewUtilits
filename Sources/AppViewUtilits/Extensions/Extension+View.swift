@@ -9,6 +9,7 @@
 import Combine
 import SwiftUI
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public extension View {
     
@@ -47,6 +48,15 @@ public extension View {
         else { self }
     }
     
+    func hidden(_ shouldHide: Bool) -> some View {
+        opacity(shouldHide ? 0 : 1)
+    }
+}
+
+#if canImport(UIKit)
+import UIKit
+public extension View {
+    
     var keyboardPublisher: AnyPublisher<Bool, Never> {
         Publishers
             .Merge(
@@ -61,12 +71,10 @@ public extension View {
             .debounce(for: .seconds(0.1), scheduler: RunLoop.main)
             .eraseToAnyPublisher()
     }
-    
-    func hidden(_ shouldHide: Bool) -> some View {
-        opacity(shouldHide ? 0 : 1)
-    }
 }
+#endif
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public struct ViewDidLoadModifier: ViewModifier {
     

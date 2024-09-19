@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // Options for configuring the placeholder container view.
 public struct PlaceholderContainerOptions {
@@ -48,3 +47,5 @@ public struct PlaceholderContainerOptions {
         self.textsSpacing = textsSpacing
     }
 }
+
+#endif

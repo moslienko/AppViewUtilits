@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIButton {
     
@@ -28,3 +27,5 @@ public extension UIButton {
     }
     
 }
+
+#endif

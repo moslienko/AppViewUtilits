@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIApplication {
     
@@ -23,3 +22,5 @@ public extension UIApplication {
         return base
     }
 }
+
+#endif

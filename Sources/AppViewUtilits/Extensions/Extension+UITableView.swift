@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public protocol ClassNameProtocol {
     static var className: String { get }
@@ -72,3 +71,5 @@ public extension UITableView {
     }
     
 }
+
+#endif

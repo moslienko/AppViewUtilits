@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppTouchLabel: AppLabel {
     
@@ -33,3 +32,5 @@ public class AppTouchLabel: AppLabel {
         }
     }
 }
+
+#endif

@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public final class AppContentSizedTableView: UITableView {
     
@@ -22,3 +21,5 @@ public final class AppContentSizedTableView: UITableView {
         return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
     }
 }
+
+#endif

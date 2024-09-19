@@ -8,6 +8,9 @@
 
 import Foundation
 
+#if canImport(UIKit)
+import UIKit
+
 /// Options for configuring a placeholder view, including icon and button options.
 public struct PlaceholderOptions {
     /// The options for the placeholder container.
@@ -35,3 +38,5 @@ public struct PlaceholderOptions {
         self.buttonOptions = buttonOptions
     }
 }
+
+#endif

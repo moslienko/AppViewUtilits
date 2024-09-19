@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppLabel: UILabel {
 
@@ -31,3 +30,5 @@ public class AppLabel: UILabel {
         self.attributedText = attributedText
     }
 }
+
+#endif

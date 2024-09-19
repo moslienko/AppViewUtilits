@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public protocol AppViewDelegate {
     var model: AppViewModel? { get set }
@@ -142,3 +141,5 @@ private extension AppView {
         swipeActions?(gesture.direction)
     }
 }
+
+#endif

@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppSpacerView: AppView {
     
@@ -86,3 +85,5 @@ public extension AppSpacerView {
         return spacer
     }
 }
+
+#endif

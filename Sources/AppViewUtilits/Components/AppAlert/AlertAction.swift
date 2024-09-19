@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 /// Represents an action that can be added to an alert.
 public struct AlertAction {
@@ -27,3 +26,5 @@ public struct AlertAction {
         self.action = action
     }
 }
+
+#endif

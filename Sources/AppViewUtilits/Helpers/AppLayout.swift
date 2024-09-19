@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIView {
     
@@ -316,3 +315,5 @@ public extension AppLayout {
         return self
     }
 }
+
+#endif

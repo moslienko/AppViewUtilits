@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 /// A protocol representing the type of a placeholder
 public protocol PlaceholderType {
@@ -24,3 +23,5 @@ public protocol PlaceholderType {
     /// Placeholder action button title (if need button)
     var buttonTitle: String? { get }
 }
+
+#endif

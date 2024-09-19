@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppTextField: UITextField {
     
@@ -57,3 +56,5 @@ private extension AppTextField {
         didTextChanged?(textField.text ?? "")
     }
 }
+
+#endif

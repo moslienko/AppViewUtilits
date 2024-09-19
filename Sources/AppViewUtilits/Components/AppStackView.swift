@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppStackView: UIStackView {
     
@@ -52,3 +51,5 @@ public extension AppStackView {
         subviews.compactMap { $0 as? T }
     }
 }
+
+#endif

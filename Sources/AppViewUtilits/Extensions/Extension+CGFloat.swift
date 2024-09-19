@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension CGFloat {
     
@@ -18,3 +17,4 @@ public extension CGFloat {
     
 }
 
+#endif

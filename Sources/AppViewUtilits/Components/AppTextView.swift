@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public class AppTextView: UITextField {
     
@@ -93,3 +92,5 @@ extension AppTextView: UITextFieldDelegate {
         shouldReturn?(textField) ?? true
     }
 }
+
+#endif
