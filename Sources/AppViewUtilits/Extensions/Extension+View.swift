@@ -55,6 +55,7 @@ public extension View {
 
 #if canImport(UIKit)
 import UIKit
+@available(iOS 13.0, *)
 public extension View {
     
     var keyboardPublisher: AnyPublisher<Bool, Never> {

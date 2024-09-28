@@ -40,7 +40,6 @@ class AppViewExampleViewController: AppViewController {
     var isEnabledBtns = true
     var isDarkTheme = false {
         didSet {
-            print("setAppTheme - \(isDarkTheme)")
             AppThemeManager.default.setAppTheme()
             self.setupView()
         }
@@ -77,7 +76,6 @@ class AppViewExampleViewController: AppViewController {
             self.tableLinkListItemView.updateView()
             
             let newTestableViewWidth: CGFloat = self.layoutTestingView.bounds.width == 64 ? 200 : 64
-            print("newTestableViewWidth - \(newTestableViewWidth)")
             self.layoutTestingView.layout.width(newTestableViewWidth)
         }
         self.enableListItemView.model = setEnableModel
@@ -132,7 +130,7 @@ class AppViewExampleViewController: AppViewController {
                     Int.random(in: 0...5) == 3
                 },
                 didHandleMethod: {
-                    print("Recursion success handler")
+                    Log.debug("Recursion success handler")
                 },
                 delay: 3.0
             )

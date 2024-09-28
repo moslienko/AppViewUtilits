@@ -8,8 +8,9 @@
 #if canImport(UIKit)
 import UIKit
 
+/// A UITableView subclass that automatically adjusts its intrinsic content size based on its content size.
 public final class AppContentSizedTableView: UITableView {
-    
+
     override public var contentSize: CGSize {
         didSet {
             invalidateIntrinsicContentSize()
