@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Provide debouncing functionality for a given callback function.
+/// Provide debouncing functionality.
 public class DebouncedFunction: NSObject {
     
     private var callback: Callback

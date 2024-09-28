@@ -20,6 +20,7 @@ public enum ConstaintType {
     case equal, greaterThanOrEqual, lessThanOrEqual
 }
 
+/// Building an interface through code.
 public class AppLayout {
     
     private var view: UIView
