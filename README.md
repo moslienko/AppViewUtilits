@@ -16,33 +16,79 @@
 A collection of useful extensions and classes for working on a iOS app projects that have been used in them many times.
 </p>
 
-## Extensions
-<p align="left">
-There are extensions to the types: Double, UIViewController, UIImage, CAAnimation, UIBezierPath, UITabBar, Dictionary, Array, UITextField, CGFloat, Sequence, String, UILabel, Notification, FileManager, Int, CALayer, UIApplication, UIWindow, AVPlayer, NSCountedSet, Collection, UIView, Date, UIStackView, UITableView, Encodable, UICollectionView, UIColor, UIImageView, UIScrollView, Optional, UIButton, SKProduct.
-</p>
+## Table of Contents
 
-## AppView
-<p align="left">
-AppView - this is a set of classes to facilitate work with a UIView & UIViewController. The following classes are available for use: AppView (UIView), AppViewModel - model class for AppView, AppViewController (UIViewController).
-</p>
+* [Installation](#installation)
+* [Usage](#usage)
+	* [Extensions](#extensions)
+	* [](#)
+	* [](#)
+	* [](#)
+	* [](#)
+	* [](#)
+	* [](#)
+	* [](#)
+	* [](#)
+	* [](#)
 
-<p align="left">
-AppView also supports handling of taps and swipes.
-</p>
+* [License](#license)
+
+### Installation
+
+### Swift Package Manager
+
+To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
 
 ```swift
-    func addTap(_ action: @escaping DataCallback<CGPoint>)
-    func addDoubleTap(_ action: @escaping DataCallback<CGPoint>)
-    func addLongPress(minimumPressDuration: TimeInterval = 0, action: @escaping DataCallback<UILongPressGestureRecognizer>)
-    func addPan(_ panAction: @escaping DataCallback<UIPanGestureRecognizer>)
-    func addSwipeGestureRecognizer(directions: UISwipeGestureRecognizer.Direction, action: @escaping DataCallback<UISwipeGestureRecognizer.Direction>)
+dependencies: [
+    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.3.0")
+]
 ```
 
+Alternatively navigate to your Xcode project, select `Swift Packages` and click the `+` icon to search for `AppViewUtilits`.
+
+### Manually
+
+If you prefer not to use any of the aforementioned dependency managers, you can integrate AppViewUtilits into your project manually. Simply drag the `Sources` Folder into your Xcode project.
+
+## Usage
+
+## Extensions
+There are extensions to the types: 
+
+| --- | --- | --- | --- |
+| [Array](Sources/AppViewUtilits/Extensions/Extension+Array.swift) | [AVPlayer](Sources/AppViewUtilits/Extensions/Extension+AVPlayer.swift) | [UIButton](Sources/AppViewUtilits/Extensions/Extension+UIButton.swift) | [CALayer](Sources/AppViewUtilits/Extensions/Extension+CALayer.swift) |
+| [CAAnimation](Sources/AppViewUtilits/Extensions/Extension+CAAnimation.swift) | [CGFloat](Sources/AppViewUtilits/Extensions/Extension+CGFloat.swift) | [Collection](Sources/AppViewUtilits/Extensions/Extension+Collection.swift) | [Color](Sources/AppViewUtilits/Extensions/Extension+Color.swift) |
+| [Date](Sources/AppViewUtilits/Extensions/Extension+Date.swift) | [Dictionary](Sources/AppViewUtilits/Extensions/Extension+Dictionary.swift) | [Double](Sources/AppViewUtilits/Extensions/Extension+Double.swift) | [Encodable](Sources/AppViewUtilits/Extensions/Extension+Encodable.swift) |
+| [FileManager](Sources/AppViewUtilits/Extensions/Extension+FileManager.swift) | [UIImage](Sources/AppViewUtilits/Extensions/Extension+UIImage.swift) | [UIImageView](Sources/AppViewUtilits/Extensions/Extension+UIImageView.swift) | [Int](Sources/AppViewUtilits/Extensions/Extension+Int.swift) |
+| [Label](Sources/AppViewUtilits/Extensions/Extension+UILabel.swift) | [NSAttributedString](Sources/AppViewUtilits/Extensions/Extension+NSAttributedString.swift) | [NSCountedSet](Sources/AppViewUtilits/Extensions/Extension+NSCountedSet.swift) | [NSPredicate](Sources/AppViewUtilits/Extensions/Extension+NSPredicate.swift) |
+| [Notification](Sources/AppViewUtilits/Extensions/Extension+Notification.swift) | [Optional](Sources/AppViewUtilits/Extensions/Extension+Optional.swift) | [Sequence](Sources/AppViewUtilits/Extensions/Extension+Sequence.swift) | [SKProduct](Sources/AppViewUtilits/Extensions/Extension+SKProduct.swift) |
+| [String](Sources/AppViewUtilits/Extensions/Extension+String.swift) | [UICollectionView](Sources/AppViewUtilits/Extensions/Extension+UICollectionView.swift) | [UIColor](Sources/AppViewUtilits/Extensions/Extension+UIColor.swift) | [UIApplication](Sources/AppViewUtilits/Extensions/Extension+UIApplication.swift) |
+| [UIBezierPath](Sources/AppViewUtilits/Extensions/Extension+UIBezierPath.swift) | [UILabel](Sources/AppViewUtilits/Extensions/Extension+UILabel.swift) | [UITableView](Sources/AppViewUtilits/Extensions/Extension+UITableView.swift) | [UITextField](Sources/AppViewUtilits/Extensions/Extension+UITextField.swift) |
+| [UITabBar](Sources/AppViewUtilits/Extensions/Extension+UITabBar.swift) | [UIView](Sources/AppViewUtilits/Extensions/Extension+UIView.swift) | [UIViewController](Sources/AppViewUtilits/Extensions/Extension+UIViewController.swift) | [UIStackView](Sources/AppViewUtilits/Extensions/Extension+UIStackView.swift) |
+| [UIWindow](Sources/AppViewUtilits/Extensions/Extension+UIWindow.swift) | [UIScrollView](Sources/AppViewUtilits/Extensions/Extension+UIScrollView.swift) | [View](Sources/AppViewUtilits/Extensions/Extension+View.swift) |  |
+
+## AppView
+AppView - this is a set of classes to facilitate work with a UIView & UIViewController. The following classes are available for use:
+- `AppView` (UIView)
+- `AppViewModel` - model class for AppView
+- `AppViewController` (UIViewController).
+
+`AppView` also supports handling of taps and swipes:
+
+```swift
+func addTap(_ action: @escaping DataCallback<CGPoint>)
+func addDoubleTap(_ action: @escaping DataCallback<CGPoint>)
+func addLongPress(minimumPressDuration: TimeInterval = 0, action: @escaping DataCallback<UILongPressGestureRecognizer>)
+func addPan(_ panAction: @escaping DataCallback<UIPanGestureRecognizer>)
+func addSwipeGestureRecognizer(directions: UISwipeGestureRecognizer.Direction, action: @escaping DataCallback<UISwipeGestureRecognizer.Direction>)
+```
+
+
+## Components
 ## Cells
 ### Table Cell
-<p align="left">
- AppViewTableCell - class for table cell.
-</p>
+ `AppViewTableCell` - class for table cell.
 
  ```swift
 class ExampleCell: AppViewTableCell<ExampleCellModel> {
@@ -72,17 +118,14 @@ class ExampleCellModel: AppViewCellIdentifiable {
     }
 }
 ```
-<p align="left">
- Register cell:
-</p>
+
+Register cell:
 
 ```swift
     self.tableView.registerCellClass(ExampleCell.self)
 ```
 
-<p align="left">
- Display cell:
-</p>
+Display cell:
 
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,27 +140,278 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ```
 
 ### Collection Cell
-<p align="left">
-  AppViewCollectionCell - class for collection cell.
-</p>
+
+`AppViewCollectionCell` - class for collection cell.
+
+### LimitedTextField
+UITextField with the maximum number of entered characters.
+
+```swift
+LimitedTextField: UITextField {}
+```
+
+### AppContentSizedTableView
+
+A `UITableView` subclass that automatically adjusts its intrinsic content size based on its content size.
+
+```swift
+AppContentSizedTableView: UITableView {}
+```
+
+### LimitedTextField
+UITextField with the maximum number of entered characters.
+
+```swift
+LimitedTextField: UITextField {}
+```
+
+## UI Components
+### AppButton
+ UIButton based class with useful extras.
+ Can be used in conjunction with DecorateWrapper to automatic set different styles for all button states.
+
+```swift
+    var regularStyle: DecorateWrapper<AppButton>?
+    var disabledStyle: DecorateWrapper<AppButton>?
+    var highlightedStyle: DecorateWrapper<AppButton>?
+```
+
+Handling actions.
+
+```swift
+    let button = AppButton(title: "Action")
+    button.addAction {}
+    button.addTapAnimation(didHighlight: {}, didUnhighlight: {})
+```
+
+
+### Placeholder
+
+Displaying the customizable placeholder. Initializes a new `PlaceholderView`:
+
+```swift
+init(
+    type: PlaceholderType,
+    options: PlaceholderOptions = PlaceholderOptions(),
+    didActionButtonTapped: Callback? = nil
+)
+```
+
+Set the style for the placeholder UI elements:
+
+```swift
+func decorate(
+  titleLabelStyle: DecorateWrapper<UILabel> = .defaultPlaceholderHeaderStyle(),
+  messageLabelStyle: DecorateWrapper<UILabel> = .defaultPlaceholderMessageStyle(),
+  buttonRegularStyle: DecorateWrapper<AppButton> = .defaultPlaceholderButtonStyle(),
+  buttonDisabledStyle: DecorateWrapper<AppButton>? = nil,
+  highlightedStyle: DecorateWrapper<AppButton>? = nil
+)
+```
+
+Display the placeholder on the screen:
+
+```swift
+func addPlaceholder(_ view: PlaceholderView)
+```
+
+Remove the placeholder from the screen:
+
+```swift
+func removePlaceholder()
+```
+
+Example of use:
+
+```swift
+enum AppPlaceholder: PlaceholderType {
+  case emptyList
+
+  var title: String {
+    switch self {
+    case .emptyList:
+      return "Empty list"
+    }
+  }
+
+  var message: String? {
+    switch self {
+    case .emptyList:
+      return "You don't have any entries yet"
+    }
+  }
+
+  var buttonTitle: String? {
+    switch self {
+    case .emptyList:
+      return "Close"
+    }
+  }
+
+  var icon: UIImage? {
+    switch self {
+    case .emptyList:
+      return UIImage(systemName: "list.clipboard")
+    }
+  }
+}
+
+private(set) lazy var placeholderView: PlaceholderView = {
+  let view = PlaceholderView(
+    type: AppPlaceholder.emptyList,
+    options: PlaceholderOptions(),
+    didActionButtonTapped: { [weak self] in
+    }
+  )
+  view.decorate(
+    buttonRegularStyle: .wrap(style: { button in
+      button.backgroundColor = .systemGreen
+      button.tintColor = .white
+      button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+      button.layer.cornerRadius = 15
+    }),
+    highlightedStyle: .wrap(style: { button in
+      button.backgroundColor = .systemGreen.withAlphaComponent(0.7)
+    })
+  )
+  return view
+}()
+
+...
+
+if !self.models.isEmpty {
+  self.tableView.removePlaceholder()
+  self.tableView.reloadData()
+} else {
+  self.tableView.reloadData()
+  self.tableView.addPlaceholder(self.placeholderView)
+}
+```
+
 
 ## Helpers
+
+### Debug
+
+#### Log
+Logger to the console.
+
+```swift
+Log.debug("Started")
+Log.info("Success finished")
+Log.error("Failed \(error)")
+```
+
+#### Measure
+A utility class for measuring execution time and memory usage of code blocks.
+
+Measures the execution time of a synchronous block of code.
+ 
+```swift
+func measureExecutionTime(
+    label: String = "Execution Time",
+    _ block: () -> Void
+)
+```
+
+Measures the execution time of an asynchronous block of code.
+
+```swift
+func measureAsyncExecutionTime(
+    label: String = "Async Operation",
+    _ block: (@escaping () -> Void) -> Void
+)
+```
+
+Measures the average execution time of a block of code over multiple runs.
+
+```swift
+func measureAverageExecutionTime(
+    repeatCount: Int,
+    label: String = "Average Execution Time",
+    _ block: () -> Void
+)
+```
+
+Measures the memory usage of a block of code.
+
+```swift
+func measureMemoryUsage(
+    label: String = "Memory Usage",
+    _ block: () -> Void
+)
+```
+
+#### TimeLogger
+A utility class for logging the time taken by various sections of code.
+
+Starts timing a section of code.
+
+```swift
+func startSection(_ section: String)
+```
+
+Ends timing a section of code and logs the elapsed time.
+
+```swift
+func endSection(_ section: String)
+```
+
+### Threads
+
+#### DebouncedFunction
+
+Provide debouncing functionality.
+
+```swift
+let method = DebouncedFunction(delay: 1.0) {
+    Log.debug("Called")
+}
+method.call()
+```
+
+#### RecursionFunction
+
+Performs a recursive operation with a condition check and retry mechanism.
+Example:
+
+```swift
+RecursionFunction(maxRetryCount: 5)
+  .performRecursion(
+    isCondition: {
+      Int.random(in: 0...5) == 3
+    },
+    didHandleMethod: {
+		   Log.debug("Recursion success handler")
+    },
+    delay: 3.0
+  )
+```
+
+#### ThreadSwitching
+
+Easy work with threads.
+
+```swift
+onMainThread {}
+onBgThread {}
+```
 
 ### AppVersion
 Application version information.
 
 ```swift
-    AppVersion.getInfo()
+AppVersion.getInfo()
 ```
 
 Result:
 
 ```swift
 struct Info {
-    var appName: String
-    var version: String
-    var build: String
-    var target: String
+  var appName: String
+  var version: String
+  var build: String
+  var target: String
 }
 ```
 
@@ -139,122 +433,118 @@ extension DecorateWrapper where Element: UILabel {
     }
 }
 ```
+
 Example call:
 
 ```swift
-    titleLabel.apply(.headerStyle())
+titleLabel.apply(.headerStyle())
 ```
 
 ### Environment
 
 ```swift
-    Environment.current
+Environment.current
 ```
 
 Result:
 
 ```swift
- enum Environment {
-    case debug
-    case release
-    case testFlight
+enum Environment {
+  case debug
+  case release
+  case testFlight
 }
-```
-
-### LimitedTextField
-UITextField with the maximum number of entered characters.
-```swift
-    LimitedTextField: UITextField {}
-```
-
-### ContentSizedTableView
-```swift
-    ContentSizedTableView: UITableView {}
-```
-
-### DebouncedFunction
-```swift
-let method = DebouncedFunction(delay: 1.0) {
-    Log.debug("Called")
-}
-method.call()
 ```
 
 ### Reachability
+
 Internet connection checker.
+
 ```swift
-    Reachability.isConnectedToNetwork()
+Reachability.isConnectedToNetwork()
 ```
 
-### ThreadSwitching
-Easy work with threads.
-```swift
-    onMainThread {}
-    onBgThread {}
-```
+### Callback
 
-### Log
-Logger to the console.
 ```swift
-    Log.debug("Started")
-    Log.info("Success finished")
-    Log.error("Failed \(error)")
-```
-
-### LimitedTextField
-UITextField with the maximum number of entered characters.
-```swift
-    LimitedTextField: UITextField {}
+typealias Callback = () -> Void
+typealias DataCallback<T> = (T) -> Void
+typealias ValueCallback<T> = () -> T
 ```
 
 ### NotificationObserver
+
 Helper class for working with NSNotification.
-```swift
-    func addObserver(forName name: NSNotification.Name?, object obj: Any?, queue: OperationQueue? = .main, using block: @escaping (Notification) -> Void)
-    func removeObserver(_ observer: AnyObject)
-    func removeAllObservers()
-```
-
-## UI Components
-### AppButton
-<p align="left">
- UIButton based class with useful extras.
- Can be used in conjunction with DecorateWrapper to automatic set different styles for all button states.
-</p>
 
 ```swift
-    var regularStyle: DecorateWrapper<AppButton>?
-    var disabledStyle: DecorateWrapper<AppButton>?
-    var highlightedStyle: DecorateWrapper<AppButton>?
+func addObserver(
+  forName name: NSNotification.Name?, object obj: Any?, queue: OperationQueue? = .main,
+  using block: @escaping (Notification) -> Void)
+func removeObserver(_ observer: AnyObject)
+func removeAllObservers()
 ```
 
-<p align="left">
- Handling actions.
-</p>
+### AppThemeManager
+
+A manager for dynamically changing the apps appearance by overriding the user interface style on all screens.
+Example:
 
 ```swift
-    let button = AppButton(title: "Action")
-    button.addAction {}
-    button.addTapAnimation(didHighlight: {}, didUnhighlight: {})
+var isDarkTheme = false {
+  didSet {
+    AppThemeManager.default.setAppTheme()
+  }
+}
+
+...
+
+AppThemeManager.default.setOverrideUserInterfaceStyleCallback = {
+  self.isDarkTheme ? .dark : .light
+}
 ```
 
-### Installation
+### AppLayout
+[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#experimental)
 
-### Swift Package Manager
+Building an interface through code. 
 
-To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
+Example:
 
 ```swift
-dependencies: [
-    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.2.5")
-]
+let listItemView = UIView()
+
+listItemView.layout
+  .addToSuperview(self.view)
+  .height(64.0)
+  .top(to: self.view.safeAreaLayoutGuide.topAnchor)
+  .leading(to: self.view.leadingAnchor)
+  .trailing(to: self.view.trailingAnchor)
 ```
 
-Alternatively navigate to your Xcode project, select `Swift Packages` and click the `+` icon to search for `AppViewUtilits`.
+### EventObject
+ Class for sending and receiving events via Combine.
+ 
+ ```swift
+ public protocol EventReceiver {
+  associatedtype Event
 
-### Manually
+  func subscribe(receiveValue: @escaping (Event) -> Void) -> AnyCancellable
+  func subscribe<S: Scheduler>(
+    on scheduler: S,
+    receiveValue: @escaping (Event) -> Void
+  ) -> AnyCancellable
+}
 
-If you prefer not to use any of the aforementioned dependency managers, you can integrate AppViewUtilits into your project manually. Simply drag the `Sources` Folder into your Xcode project.
+public protocol EventNotifier {
+  associatedtype Event
+
+  func send(_ event: Event)
+  var receiver: any EventReceiver { get }
+}
+
+public class EventObject<Event>: EventNotifier, EventReceiver {}
+
+ ```
 
 ## License
 
