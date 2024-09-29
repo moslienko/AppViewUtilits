@@ -19,18 +19,44 @@ A collection of useful extensions and classes for working on a iOS app projects 
 ## Table of Contents
 
 * [Installation](#installation)
-* [Usage](#usage)
-	* [Extensions](#extensions)
-	* [](#)
-	* [](#)
-	* [](#)
-	* [](#)
-	* [](#)
-	* [](#)
-	* [](#)
-	* [](#)
-	* [](#)
-
+* [Extensions](#extensions)
+* [Components](#components)
+    * [AppView](#appview)
+    * [AppAlert](#appalert)
+    * [Placeholder](#placeholder)
+    * [Cells](#cells)
+        * [Table Cell](#table-cell)
+        * [Collection Cell](#collection-cell)
+	  * [Enhanced UIKit elements](#enhanced-uikit-elements)
+        * [AppContentSizedTableView](#appcontentsizedtableview)
+        * [AppButton](#appbutton)
+        * [AppLabel](#applabel)
+        * [AppTextField](#apprextfield)
+        * [AppTextView](#apptextview)
+        * [AppSpacerView](#appspacerview)
+        * [AppLoaderView](#apploaderview)
+        * [AppTouchLabel](#apptouchlabel)
+        * [AppScrollView](#appscrollview)
+        * [AppStackView](#appstackview)
+        * [AppBarButtonItem](#appbarbuttonitem)
+* [Helpers](#helpers)
+    * [Debug](#debug)
+        * [Log](#log)
+        * [Measure](#measure)
+        * [TimeLogger](#timelogger)
+    * [Threads](#)
+        * [DebouncedFunction](#debouncedfunction)
+        * [RecursionFunction](#recursionfunction)
+        * [ThreadSwitching](#threadswitching)
+    * [AppVersion](#appversion)
+    * [Decorate](#decorate)
+    * [Environment](#environment)
+    * [Reachability](#reachability)
+    * [Callback](#callback)
+    * [NotificationObserver](#notificationobserver)
+    * [AppThemeManager](#appthememanager)
+    * [AppLayout](#applayout)
+    * [EventObject](#eventobject)
 * [License](#license)
 
 ### Installation
@@ -50,8 +76,6 @@ Alternatively navigate to your Xcode project, select `Swift Packages` and click 
 ### Manually
 
 If you prefer not to use any of the aforementioned dependency managers, you can integrate AppViewUtilits into your project manually. Simply drag the `Sources` Folder into your Xcode project.
-
-## Usage
 
 ## Extensions
 There are extensions to the types: 
