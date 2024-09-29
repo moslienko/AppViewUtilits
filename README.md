@@ -56,7 +56,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ## Extensions
 There are extensions to the types: 
 
-| Array                                                       | AVPlayer                                                  | UIButton                                                   | CALayer                                                   |
+|                                                       |                                                  |                                                   |                                                   |
 |------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|
 | [Array](Sources/AppViewUtilits/Extensions/Extension+Array.swift) | [AVPlayer](Sources/AppViewUtilits/Extensions/Extension+AVPlayer.swift) | [UIButton](Sources/AppViewUtilits/Extensions/Extension+UIButton.swift) | [CALayer](Sources/AppViewUtilits/Extensions/Extension+CALayer.swift) |
 | [CAAnimation](Sources/AppViewUtilits/Extensions/Extension+CAAnimation.swift) | [CGFloat](Sources/AppViewUtilits/Extensions/Extension+CGFloat.swift) | [Collection](Sources/AppViewUtilits/Extensions/Extension+Collection.swift) | [Color](Sources/AppViewUtilits/Extensions/Extension+Color.swift) |
@@ -227,50 +227,50 @@ if !self.models.isEmpty {
 
  ```swift
 class ExampleCell: AppViewTableCell<ExampleCellModel> {
-    
-    override func updateView() {
-        guard let cellModel = cellModel else {
-            return
-        }
-        
-        self.textLabel?.text = cellModel.title
-        self.layoutIfNeeded()
+
+  override func updateView() {
+    guard let cellModel = cellModel else {
+      return
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
+
+    self.textLabel?.text = cellModel.title
+    self.layoutIfNeeded()
+  }
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+  }
 }
 ```
 
 ```swift
 class ExampleCellModel: AppViewCellIdentifiable {
 
-    let title: String
+  let title: String
 
-    init(title: String) {
-        self.title = title
-    }
+  init(title: String) {
+    self.title = title
+  }
 }
 ```
 
 Register cell:
 
 ```swift
-    self.tableView.registerCellClass(ExampleCell.self)
+self.tableView.registerCellClass(ExampleCell.self)
 ```
 
 Display cell:
 
 ```swift
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let model = models[safe: indexPath.section]?[safe: indexPath.row] else {
-        return UITableViewCell()
-    }
-    let cell = tableView.dequeueReusableCell(with: ExampleCell.self, for: indexPath)
-    cell.cellModel = model as? ExampleCellModel
+  guard let model = models[safe: indexPath.section]?[safe: indexPath.row] else {
+    return UITableViewCell()
+  }
+  let cell = tableView.dequeueReusableCell(with: ExampleCell.self, for: indexPath)
+  cell.cellModel = model as? ExampleCellModel
 
-    return cell
+  return cell
 }
 ```
 
@@ -292,17 +292,17 @@ AppContentSizedTableView: UITableView {}
  Can be used in conjunction with `DecorateWrapper` to automatic set different styles for all button states.
 
 ```swift
-    var regularStyle: DecorateWrapper<AppButton>?
-    var disabledStyle: DecorateWrapper<AppButton>?
-    var highlightedStyle: DecorateWrapper<AppButton>?
+var regularStyle: DecorateWrapper<AppButton>?
+var disabledStyle: DecorateWrapper<AppButton>?
+var highlightedStyle: DecorateWrapper<AppButton>?
 ```
 
 Handling actions.
 
 ```swift
-    let button = AppButton(title: "Action")
-    button.addAction {}
-    button.addTapAnimation(didHighlight: {}, didUnhighlight: {})
+let button = AppButton(title: "Action")
+button.addAction {}
+button.addTapAnimation(didHighlight: {}, didUnhighlight: {})
 ```
 
 #### AppLabel
@@ -544,7 +544,6 @@ struct Info {
 Wrapper for setting UI element styles.
 
 ```swift
- 
 extension DecorateWrapper where Element: UILabel {
     static func headerStyle() -> DecorateWrapper {
         return .wrap { label in
