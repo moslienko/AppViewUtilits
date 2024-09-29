@@ -39,7 +39,7 @@ public class AppAlertController: UIAlertController {
             preferredStyle: model.preferredStyle
         )
         alertController.configureAlert(with: model)
-        
+                
         return alertController
     }
 }

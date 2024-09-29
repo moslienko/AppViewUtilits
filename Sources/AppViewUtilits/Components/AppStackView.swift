@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// Subclass `UIStackView`.
 public class AppStackView: UIStackView {
     
     // MARK: - Init

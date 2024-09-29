@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// Helpful `UIView` subclass for displaying a spacer component, e.g. as an additional element in a `UIStackView`.
 public class AppSpacerView: AppView {
     
     public enum Direction {

@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// `UILabel` subclass with the ability to tap on it.
 public class AppTouchLabel: AppLabel {
     
     // MARK: - Callbacks

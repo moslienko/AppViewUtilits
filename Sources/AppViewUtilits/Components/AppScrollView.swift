@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// Subclass `UIScrollView`.
 public class AppScrollView: UIScrollView {
     
     // MARK: - Init

@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// `UIVIew` subclass for displaying the indicator.
 public class AppLoaderView: AppView {
     
     // MARK: - Properties

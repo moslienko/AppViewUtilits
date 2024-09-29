@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// Subclass `UILabel`.
 public class AppLabel: UILabel {
 
     override public init(frame: CGRect) {

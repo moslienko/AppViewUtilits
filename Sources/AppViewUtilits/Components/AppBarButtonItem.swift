@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// Subclass `UIBarButtonItem`.
 public class AppBarButtonItem: UIBarButtonItem {
     
     // MARK: - Callback

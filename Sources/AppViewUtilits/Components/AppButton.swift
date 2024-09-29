@@ -9,6 +9,7 @@
 #if canImport(UIKit)
 import UIKit
 
+/// `UIButton` based class with useful extras.
 public class AppButton: UIButton {
     
     private var action: Callback?
