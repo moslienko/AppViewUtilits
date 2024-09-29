@@ -17,8 +17,14 @@ public extension UIImageView {
             self.image = placeholder
             return
         }
-        
-        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        var indicatorStyle: UIActivityIndicatorView.Style {
+            if #available(iOS 13.0, *) {
+                return .medium
+            } else {
+                return .gray
+            }
+        }
+        let activityIndicator = UIActivityIndicatorView(style: indicatorStyle)
         activityIndicator.frame = CGRect.init(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         activityIndicator.startAnimating()
         if self.image == nil{
