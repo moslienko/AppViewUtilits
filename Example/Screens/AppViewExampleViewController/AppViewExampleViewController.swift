@@ -17,19 +17,42 @@ import AppViewUtilits
 class AppViewExampleViewController: AppViewController {
     
     // MARK: Properties
-    @IBOutlet private weak var listItemView: ListItemView!
-    @IBOutlet private weak var tableLinkListItemView: ListItemView!
-    @IBOutlet private weak var enableListItemView: ListItemView!
+    private lazy var listItemView: ListItemView = {
+        let view = ListItemView()
+        return view
+    }()
+    
+    private lazy var tableLinkListItemView: ListItemView = {
+        let view = ListItemView()
+        return view
+    }()
+    
+    private lazy var enableListItemView: ListItemView = {
+        let view = ListItemView()
+        return view
+    }()
+    
+    private lazy var layoutTestingView: UIView = {
+        let view = UIView(backgroundColor: .systemRed)
+        return view
+    }()
     
     var isEnabledBtns = true
-    
-    public class var fromXib: AppViewExampleViewController {
-        AppViewExampleViewController(nibName: "AppViewExampleViewController", bundle: nil)
+    var isDarkTheme = false {
+        didSet {
+            AppThemeManager.default.setAppTheme()
+            self.setupView()
+        }
     }
-    
+
     override func reloadData() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemGroupedBackground
         self.navigationItem.title = "App View"
+        self.setupView()
+
+        AppThemeManager.default.setOverrideUserInterfaceStyleCallback = {
+            self.isDarkTheme ? .dark : .light
+        }
         
         let itemModel = ListItemViewModel(title: "Hello world!", isEnabled: isEnabledBtns)
         itemModel.actionCallback = {
@@ -51,6 +74,9 @@ class AppViewExampleViewController: AppViewController {
             self.listItemView.updateView()
             tableLinkModel.isEnabled = self.isEnabledBtns
             self.tableLinkListItemView.updateView()
+            
+            let newTestableViewWidth: CGFloat = self.layoutTestingView.bounds.width == 64 ? 200 : 64
+            self.layoutTestingView.layout.width(newTestableViewWidth)
         }
         self.enableListItemView.model = setEnableModel
         
@@ -58,4 +84,55 @@ class AppViewExampleViewController: AppViewController {
     }
     
     override func setupView(with state: ViewState) {}
+    
+    func setupView() {
+        self.navigationItem.rightBarButtonItem = AppBarButtonItem(
+            icon: self.isDarkTheme ? UIImage(systemName: "sun.max") : UIImage(systemName: "moon"),
+            style: .done,
+            action: {
+                self.isDarkTheme.toggle()
+            }
+        )
+        
+        listItemView.layout
+            .addToSuperview(self.view)
+            .height(64.0)
+            .top(to: self.view.safeAreaLayoutGuide.topAnchor)
+            .leading(to: self.view.leadingAnchor)
+            .trailing(to: self.view.trailingAnchor)
+        
+        enableListItemView.layout
+            .addToSuperview(self.view)
+            .height(64.0)
+            .top(to: listItemView.bottomAnchor)
+            .leading(to: self.view.leadingAnchor)
+            .trailing(to: self.view.trailingAnchor)
+        
+        tableLinkListItemView.layout
+            .addToSuperview(self.view)
+            .height(64.0)
+            .top(to: enableListItemView.bottomAnchor)
+            .leading(to: self.view.leadingAnchor)
+            .trailing(to: self.view.trailingAnchor)
+        
+        layoutTestingView.layout
+            .addToSuperview(self.view)
+            .width(64.0)
+            .height(64.0)
+            .bottom(to: self.view.safeAreaLayoutGuide.bottomAnchor)
+            .leading(to: self.view.safeAreaLayoutGuide.leadingAnchor, offset: 8)
+    }
+    
+    func testRecursion(){
+        RecursionFunction(maxRetryCount: 5)
+            .performRecursion(
+                isCondition: {
+                    Int.random(in: 0...5) == 3
+                },
+                didHandleMethod: {
+                    Log.debug("Recursion success handler")
+                },
+                delay: 3.0
+            )
+    }
 }

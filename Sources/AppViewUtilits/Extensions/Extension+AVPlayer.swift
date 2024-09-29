@@ -16,6 +16,8 @@ public extension AVPlayer {
     
 }
 
+#if canImport(UIKit)
+import UIKit
 class CustomPlayerViewController: AVPlayerViewController {
     
     typealias DissmissBlock = () -> Void
@@ -28,3 +30,5 @@ class CustomPlayerViewController: AVPlayerViewController {
         }
     }
 }
+
+#endif

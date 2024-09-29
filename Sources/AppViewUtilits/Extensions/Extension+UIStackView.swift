@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIStackView {
     
@@ -39,3 +38,5 @@ public extension UIStackView {
         insertSubview(subview, at: 0)
     }
 }
+
+#endif

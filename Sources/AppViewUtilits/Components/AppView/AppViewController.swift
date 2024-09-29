@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 // View
 public protocol ViewState {}
@@ -24,7 +23,6 @@ public protocol ViewActionEvent: AppViewController {
 public class PresentActionEvent {
     func handleInputAction(_ action: PresenterInputAction) {}
 }
-
 
 // VC helper
 open class AppViewController: UIViewController, ViewActionEvent {
@@ -74,3 +72,5 @@ open class AppViewController: UIViewController, ViewActionEvent {
 }
 
 public protocol ViewComponents {}
+
+#endif

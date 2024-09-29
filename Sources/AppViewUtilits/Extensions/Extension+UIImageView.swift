@@ -6,10 +6,10 @@
 //  Copyright © 2021 moslienko. All rights reserved.
 //
 
+import AppViewUtilits
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIImageView {
     func imageFromURL(url: URL?, placeholder: UIImage? = nil) {
@@ -18,7 +18,7 @@ public extension UIImageView {
             return
         }
         
-        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         activityIndicator.frame = CGRect.init(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         activityIndicator.startAnimating()
         if self.image == nil{
@@ -27,7 +27,7 @@ public extension UIImageView {
         
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
             if error != nil {
-                print(error ?? "No Error")
+                Log.error(error ?? "Unknown Error")
                 DispatchQueue.main.async {
                     activityIndicator.removeFromSuperview()
                     self.image = placeholder
@@ -50,3 +50,4 @@ public extension UIImageView {
     }
 }
 
+#endif

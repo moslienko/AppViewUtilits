@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+@available(macOS 10.15, *)
 @available(iOS 13.0, *)
 public extension Color {
     
@@ -55,6 +56,9 @@ public extension Color {
     }
 }
 
+#if canImport(UIKit)
+import UIKit
+
 @available(iOS 13.0, *)
 public extension UIColor {
     
@@ -76,3 +80,5 @@ public extension UIColor {
         }
     }
 }
+
+#endif

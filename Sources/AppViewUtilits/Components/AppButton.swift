@@ -8,13 +8,15 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
+/// `UIButton` based class with useful extras.
 public class AppButton: UIButton {
     
     private var action: Callback?
     private var didHighlight: Callback?
     private var didUnhighlight: Callback?
+    
+    public var margin: CGFloat = 0.0
     
     public var regularStyle: DecorateWrapper<AppButton>? {
         didSet {
@@ -72,6 +74,10 @@ public class AppButton: UIButton {
         }
     }
     
+    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        bounds.insetBy(dx: -margin, dy: -margin).contains(point)
+    }
+    
     public func addAction(_ action: @escaping Callback) {
         self.action = action
         addTarget(
@@ -127,3 +133,5 @@ public class AppButton: UIButton {
         didUnhighlight?()
     }
 }
+
+#endif

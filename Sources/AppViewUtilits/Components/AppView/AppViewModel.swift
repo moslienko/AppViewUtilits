@@ -9,7 +9,6 @@
 import Foundation
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public protocol AppViewModelIdentifiable: AnyObject {
     var inset: UIEdgeInsets { get set }
@@ -24,3 +23,5 @@ open class AppViewModel: AppViewModelIdentifiable {
     public init() { }
     
 }
+
+#endif

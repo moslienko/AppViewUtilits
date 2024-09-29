@@ -8,7 +8,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension NSAttributedString {
     
@@ -25,3 +24,5 @@ public extension NSAttributedString {
         return ceil(boundingBox.height + textView.textContainerInset.top + textView.textContainerInset.bottom)
     }
 }
+
+#endif

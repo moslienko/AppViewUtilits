@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UITextField {
     
@@ -35,3 +34,5 @@ public extension UITextField {
         }
     }
 }
+
+#endif

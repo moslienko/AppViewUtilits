@@ -7,14 +7,17 @@
 
 import Foundation
 
+/// Build environments.
 public enum Environment {
     case debug
     case release
     case testFlight
 }
 
-public extension  Environment {
+/// Current environment detection.
+public extension Environment {
     
+    /// The current environment of the app.
     static var current: Environment {
         #if DEBUG
         return .debug
@@ -22,5 +25,4 @@ public extension  Environment {
         return Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt" ? .testFlight : .release
         #endif
     }
-    
 }

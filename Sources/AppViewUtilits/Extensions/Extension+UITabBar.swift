@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UITabBar {
     
@@ -16,3 +15,5 @@ public extension UITabBar {
         return views[safe: index]
     }
 }
+
+#endif

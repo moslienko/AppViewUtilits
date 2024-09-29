@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIView {
     
@@ -124,9 +123,7 @@ public extension UIView {
         
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
-    
-    // MARK: - Other
-    
+        
     func takeScreenshot() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         drawHierarchy(in: self.bounds, afterScreenUpdates: true)
@@ -136,6 +133,17 @@ public extension UIView {
         return image
     }
     
+    // MARK: - Init
+    convenience init(backgroundColor: UIColor) {
+        self.init(frame: .zero)
+        self.backgroundColor = backgroundColor
+    }
+    
+    // MARK: - Constraints
+    
+    func findConstraint(layoutAttribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+        self.constraints.first { $0.firstAttribute == layoutAttribute }
+    }
 }
 
 // MARK: - Blur
@@ -158,6 +166,8 @@ public extension Bluring where Self: UIView {
 }
 
 extension UIView: Bluring {}
+
+#endif
 
 private func cast<T, U>(_ value: T) -> U? {
     return value as? U

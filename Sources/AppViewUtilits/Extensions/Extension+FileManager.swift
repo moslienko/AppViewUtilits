@@ -14,7 +14,7 @@ public extension FileManager {
             do {
                 try self.removeItem(atPath: url.path)
             } catch {
-                print("Failed to delete file")
+                Log.error("Failed to delete file")
             }
         }
     }
@@ -30,7 +30,7 @@ public extension FileManager {
                 try? self.removeItem(at: fileURL)
             }
         } catch {
-            print("Could not clear documents folder: \(error)")
+            Log.error("Could not clear documents folder: \(error)")
         }
     }
     
@@ -43,7 +43,7 @@ public extension FileManager {
                 try? self.removeItem(atPath: tempFolderPath + filePath)
             }
         } catch {
-            print("Could not clear temp folder: \(error)")
+            Log.error("Could not clear temp folder: \(error)")
         }
     }
     

@@ -7,7 +7,6 @@
 
 #if canImport(UIKit)
 import UIKit
-#endif
 
 public extension UIImage {
     
@@ -140,3 +139,5 @@ public extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
+
+#endif

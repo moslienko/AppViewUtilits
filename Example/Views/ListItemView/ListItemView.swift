@@ -14,24 +14,49 @@ import AppViewUtilits
 class ListItemView: AppView {
     
     // MARK: - Outlet
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var actionButton: AppButton!
+    var titleLabel: UILabel = {
+        AppLabel()
+    }()
     
-    @IBOutlet private weak var viewTopConstaint: NSLayoutConstraint!
-    @IBOutlet private weak var viewBottomConstaint: NSLayoutConstraint!
-    @IBOutlet private weak var viewLeftConstaint: NSLayoutConstraint!
-    @IBOutlet private weak var viewRightConstaint: NSLayoutConstraint!
+    var actionButton: AppButton = {
+        let button = AppButton()
+        button.regularStyle = .actionButton()
+        button.disabledStyle = .disabledButton()
+        button.setTitle("Action", for: .normal)
+        
+        return button
+    }()
+    
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func updateView() {
         guard let model = self.model as? ListItemViewModel else { return }
         
+        titleLabel.textColor = .label
         self.titleLabel.text = model.title
         self.actionButton.isEnabled = model.isEnabled
-        print("isEnabled - \(model.isEnabled)")
-        self.viewTopConstaint.constant = model.inset.top
-        self.viewBottomConstaint.constant = model.inset.bottom
-        self.viewLeftConstaint.constant =  model.inset.left
-        self.viewRightConstaint.constant = model.inset.right
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        titleLabel.layout.addToSuperview(self)
+            .leading(to: self.leadingAnchor, offset: 8)
+            .centerY(to: self.centerYAnchor)
+        
+        actionButton.layout.addToSuperview(self)
+            .leading(to: self.titleLabel.trailingAnchor, offset: 8, type: .greaterThanOrEqual)
+            .trailing(to: self.trailingAnchor, offset: -8)
+            .height(50)
+            .centerY(to: self.centerYAnchor)
+        
+        
+        setupActions()
     }
     
     override func setupComponents() {
@@ -41,7 +66,7 @@ class ListItemView: AppView {
     }
     
     override func applyStyles() {
-        self.backgroundColor = .white
+        self.backgroundColor = .secondarySystemBackground
         self.titleLabel.apply(.headerStyle())
     }
     
@@ -58,7 +83,7 @@ class ListItemView: AppView {
 extension DecorateWrapper where Element: UILabel {
     static func headerStyle() -> DecorateWrapper {
         return .wrap { label in
-            label.textColor = .black
+            label.textColor = .label
             label.font = UIFont.boldSystemFont(ofSize: 14.0)
             label.textAlignment = .left
             label.lineBreakMode = .byWordWrapping
@@ -79,7 +104,7 @@ extension DecorateWrapper where Element: UIButton {
     static func disabledButton() -> DecorateWrapper {
         return .wrap { btn in
             btn.setTitleColor(.systemGray, for: [])
-            btn.tintColor = .systemGray
+            btn.tintColor = .secondaryLabel
             btn.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         }
     }
