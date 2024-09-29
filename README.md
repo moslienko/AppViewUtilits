@@ -56,7 +56,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ## Extensions
 There are extensions to the types: 
 
-| --- | --- | --- | --- |
+|------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|
 | [Array](Sources/AppViewUtilits/Extensions/Extension+Array.swift) | [AVPlayer](Sources/AppViewUtilits/Extensions/Extension+AVPlayer.swift) | [UIButton](Sources/AppViewUtilits/Extensions/Extension+UIButton.swift) | [CALayer](Sources/AppViewUtilits/Extensions/Extension+CALayer.swift) |
 | [CAAnimation](Sources/AppViewUtilits/Extensions/Extension+CAAnimation.swift) | [CGFloat](Sources/AppViewUtilits/Extensions/Extension+CGFloat.swift) | [Collection](Sources/AppViewUtilits/Extensions/Extension+Collection.swift) | [Color](Sources/AppViewUtilits/Extensions/Extension+Color.swift) |
 | [Date](Sources/AppViewUtilits/Extensions/Extension+Date.swift) | [Dictionary](Sources/AppViewUtilits/Extensions/Extension+Dictionary.swift) | [Double](Sources/AppViewUtilits/Extensions/Extension+Double.swift) | [Encodable](Sources/AppViewUtilits/Extensions/Extension+Encodable.swift) |
@@ -68,7 +68,9 @@ There are extensions to the types:
 | [UITabBar](Sources/AppViewUtilits/Extensions/Extension+UITabBar.swift) | [UIView](Sources/AppViewUtilits/Extensions/Extension+UIView.swift) | [UIViewController](Sources/AppViewUtilits/Extensions/Extension+UIViewController.swift) | [UIStackView](Sources/AppViewUtilits/Extensions/Extension+UIStackView.swift) |
 | [UIWindow](Sources/AppViewUtilits/Extensions/Extension+UIWindow.swift) | [UIScrollView](Sources/AppViewUtilits/Extensions/Extension+UIScrollView.swift) | [View](Sources/AppViewUtilits/Extensions/Extension+View.swift) |  |
 
-## AppView
+## Components
+
+### AppView
 AppView - this is a set of classes to facilitate work with a UIView & UIViewController. The following classes are available for use:
 - `AppView` (UIView)
 - `AppViewModel` - model class for AppView
@@ -84,106 +86,33 @@ func addPan(_ panAction: @escaping DataCallback<UIPanGestureRecognizer>)
 func addSwipeGestureRecognizer(directions: UISwipeGestureRecognizer.Direction, action: @escaping DataCallback<UISwipeGestureRecognizer.Direction>)
 ```
 
+### AppAlert
 
-## Components
-## Cells
-### Table Cell
- `AppViewTableCell` - class for table cell.
+`AppAlertController` - custom `UIAlertController` subclass for presenting alerts.
 
- ```swift
-class ExampleCell: AppViewTableCell<ExampleCellModel> {
-    
-    override func updateView() {
-        guard let cellModel = cellModel else {
-            return
-        }
-        
-        self.textLabel?.text = cellModel.title
-        self.layoutIfNeeded()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
+```swift
+struct AppAlertViewModel {
+  let title: String?
+  let message: String?
+  let actions: [AlertAction]?
+  let preferredStyle: UIAlertController.Style
+  var configureTextField: ((UITextField) -> Void)?
+  var tintColor: UIColor
+  var preventMultipleAlerts: Bool
 }
 ```
 
-```swift
-class ExampleCellModel: AppViewCellIdentifiable {
-
-    let title: String
-
-    init(title: String) {
-        self.title = title
-    }
-}
-```
-
-Register cell:
+Presents alert:
 
 ```swift
-    self.tableView.registerCellClass(ExampleCell.self)
+static func presentAlert(using model: AppAlertViewModel)
 ```
 
-Display cell:
+Or initialize the creation `AppAlertController`: to show the alert on the screen in your custom method:
 
 ```swift
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let model = models[safe: indexPath.section]?[safe: indexPath.row] else {
-        return UITableViewCell()
-    }
-    let cell = tableView.dequeueReusableCell(with: ExampleCell.self, for: indexPath)
-    cell.cellModel = model as? ExampleCellModel
-
-    return cell
-}
+static func createAppAlertController(with model: AppAlertViewModel) -> AppAlertController
 ```
-
-### Collection Cell
-
-`AppViewCollectionCell` - class for collection cell.
-
-### LimitedTextField
-UITextField with the maximum number of entered characters.
-
-```swift
-LimitedTextField: UITextField {}
-```
-
-### AppContentSizedTableView
-
-A `UITableView` subclass that automatically adjusts its intrinsic content size based on its content size.
-
-```swift
-AppContentSizedTableView: UITableView {}
-```
-
-### LimitedTextField
-UITextField with the maximum number of entered characters.
-
-```swift
-LimitedTextField: UITextField {}
-```
-
-## UI Components
-### AppButton
- UIButton based class with useful extras.
- Can be used in conjunction with DecorateWrapper to automatic set different styles for all button states.
-
-```swift
-    var regularStyle: DecorateWrapper<AppButton>?
-    var disabledStyle: DecorateWrapper<AppButton>?
-    var highlightedStyle: DecorateWrapper<AppButton>?
-```
-
-Handling actions.
-
-```swift
-    let button = AppButton(title: "Action")
-    button.addAction {}
-    button.addTapAnimation(didHighlight: {}, didUnhighlight: {})
-```
-
 
 ### Placeholder
 
@@ -221,7 +150,8 @@ Remove the placeholder from the screen:
 func removePlaceholder()
 ```
 
-Example of use:
+<details>
+  <summary>Example of use:</summary>
 
 ```swift
 enum AppPlaceholder: PlaceholderType {
@@ -288,6 +218,199 @@ if !self.models.isEmpty {
 }
 ```
 
+</details>
+
+### Cells
+#### Table Cell
+ `AppViewTableCell` - class for table cell.
+
+ ```swift
+class ExampleCell: AppViewTableCell<ExampleCellModel> {
+    
+    override func updateView() {
+        guard let cellModel = cellModel else {
+            return
+        }
+        
+        self.textLabel?.text = cellModel.title
+        self.layoutIfNeeded()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+}
+```
+
+```swift
+class ExampleCellModel: AppViewCellIdentifiable {
+
+    let title: String
+
+    init(title: String) {
+        self.title = title
+    }
+}
+```
+
+Register cell:
+
+```swift
+    self.tableView.registerCellClass(ExampleCell.self)
+```
+
+Display cell:
+
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let model = models[safe: indexPath.section]?[safe: indexPath.row] else {
+        return UITableViewCell()
+    }
+    let cell = tableView.dequeueReusableCell(with: ExampleCell.self, for: indexPath)
+    cell.cellModel = model as? ExampleCellModel
+
+    return cell
+}
+```
+
+#### Collection Cell
+
+`AppViewCollectionCell` - class for collection cell.
+
+### Enhanced UIKit elements
+#### AppContentSizedTableView
+
+A `UITableView` subclass that automatically adjusts its intrinsic content size based on its content size.
+
+```swift
+AppContentSizedTableView: UITableView {}
+```
+
+#### AppButton
+ `UIButton` based class with useful extras.
+ Can be used in conjunction with `DecorateWrapper` to automatic set different styles for all button states.
+
+```swift
+    var regularStyle: DecorateWrapper<AppButton>?
+    var disabledStyle: DecorateWrapper<AppButton>?
+    var highlightedStyle: DecorateWrapper<AppButton>?
+```
+
+Handling actions.
+
+```swift
+    let button = AppButton(title: "Action")
+    button.addAction {}
+    button.addTapAnimation(didHighlight: {}, didUnhighlight: {})
+```
+
+#### AppLabel
+
+Subclass `UILabel`. 
+
+```swift
+init(text: String)
+```
+
+#### AppTextField
+Subclass `UITextField`.
+
+```swift
+var textInsets: UIEdgeInsets
+var maxCharacters: Int?
+
+var didTextChanged: DataCallback<String>?
+var didBeginEditing: DataCallback<UITextField>?
+var didEndEditing: DataCallback<UITextField>?
+var shouldBeginEditing: ReturnedDataCallback<UITextField, Bool>?
+var shouldEndEditing: ReturnedDataCallback<UITextField, Bool>?
+var shouldClear: ReturnedDataCallback<UITextField, Bool>?
+var shouldReturn: ReturnedDataCallback<UITextField, Bool>?
+var shouldChangeCharactersIn: ReturnedDataCallback<(UITextField, NSRange, String), Bool>?
+```
+
+#### AppTextView
+Subclass `UITextView`. Callbacks similar to `AppTextField` are used, setting the `maxCharacters` value, placeholder setting.
+
+```swift
+var placeholder: String?
+var placeholderColor: UIColor
+var placeholderFont: UIFont
+var placeholderFrame: CGRect?
+```
+
+#### AppSpacerView
+Helpful `UIView` subclass for displaying a spacer component, e.g. as an additional element in a `UIStackView`.
+
+```swift
+enum Direction {
+  case vertical(CGFloat)
+  case horizontal(CGFloat)
+}
+
+init(_ direction: Direction? = nil)
+static func createView(_ direction: AppSpacerView.Direction, color: UIColor) -> AppSpacerView
+static func createView(_ direction: AppSpacerView.Direction, color: UIColor, width: Double)
+```
+
+#### AppLoaderView
+ `UIVIew` subclass for displaying the indicator.
+ 
+```swift
+func configureActivityView(
+  style: UIActivityIndicatorView.Style,
+  color: UIColor, backgroundColor: UIColor
+)
+func beginLoading()
+func finishLoading()
+```
+
+#### AppTouchLabel
+`UILabel` subclass with the ability to tap on it.
+
+```swift
+init(action: @escaping Callback)
+```
+
+#### AppScrollView
+Subclass `UIScrollView`.
+
+```swift
+func scrollToTop(animated: Bool)
+func scrollToBottom(animated: Bool)
+func scrollToLeft(animated: Bool)
+func scrollToRight(animated: Bool)
+func setScrollIndicatorsVisibility(vertical: Bool, horizontal: Bool)
+```
+
+#### AppStackView
+Subclass `UIStackView`.
+
+```swift
+init(
+  _ subviews: [UIView],
+  axis: NSLayoutConstraint.Axis,
+  spacing: CGFloat = 0,
+  distribution: Distribution = .fill
+)
+```
+
+#### AppBarButtonItem
+Subclass `UIBarButtonItem`.
+
+```swift
+init(
+  title: String,
+  style: UIBarButtonItem.Style,
+  action: Callback?
+)
+
+init(
+  icon: UIImage?,
+  style: UIBarButtonItem.Style,
+  action: Callback?
+)
+```
 
 ## Helpers
 
@@ -470,6 +593,7 @@ Reachability.isConnectedToNetwork()
 typealias Callback = () -> Void
 typealias DataCallback<T> = (T) -> Void
 typealias ValueCallback<T> = () -> T
+typealias ReturnedDataCallback<A, B> = (A) -> B
 ```
 
 ### NotificationObserver
