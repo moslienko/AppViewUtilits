@@ -67,7 +67,7 @@ To integrate using Apple's [Swift Package Manager](https://swift.org/package-man
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.3.0")
+    .package(url: "https://github.com/moslienko/AppViewUtilits.git", from: "1.3.1")
 ]
 ```
 

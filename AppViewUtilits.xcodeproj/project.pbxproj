@@ -31,6 +31,8 @@
 		953310C02A37466400D58A82 /* ExampleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953310BF2A37466400D58A82 /* ExampleCellModel.swift */; };
 		9542A1252C4A378C001B78DA /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542A1242C4A378C001B78DA /* AppTextField.swift */; };
 		9542A1282C4A3A28001B78DA /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9542A1272C4A3A28001B78DA /* AppTextView.swift */; };
+		9550C1CB2CA80E7C001DBD07 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9550C1CA2CA80E7C001DBD07 /* Measure.swift */; };
+		9550C1CE2CA80F04001DBD07 /* TimeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9550C1CD2CA80F04001DBD07 /* TimeLogger.swift */; };
 		955856542C4B6DB200FDDD23 /* AppSpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955856532C4B6DB200FDDD23 /* AppSpacerView.swift */; };
 		955856562C4B740100FDDD23 /* AppLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955856552C4B740100FDDD23 /* AppLoaderView.swift */; };
 		955856582C4B7C0700FDDD23 /* AppTouchLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955856572C4B7C0700FDDD23 /* AppTouchLabel.swift */; };
@@ -165,6 +167,8 @@
 		953310C12A374F3200D58A82 /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 		9542A1242C4A378C001B78DA /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		9542A1272C4A3A28001B78DA /* AppTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
+		9550C1CA2CA80E7C001DBD07 /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		9550C1CD2CA80F04001DBD07 /* TimeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogger.swift; sourceTree = "<group>"; };
 		955856532C4B6DB200FDDD23 /* AppSpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacerView.swift; sourceTree = "<group>"; };
 		955856552C4B740100FDDD23 /* AppLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoaderView.swift; sourceTree = "<group>"; };
 		955856572C4B7C0700FDDD23 /* AppTouchLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTouchLabel.swift; sourceTree = "<group>"; };
@@ -430,6 +434,16 @@
 			path = ExampleCell;
 			sourceTree = "<group>";
 		};
+		9550C1CC2CA80EE8001DBD07 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				95C63868290CF9EF00A224B2 /* Log.swift */,
+				9550C1CA2CA80E7C001DBD07 /* Measure.swift */,
+				9550C1CD2CA80F04001DBD07 /* TimeLogger.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		95618A662A2B691700C2A944 /* AppViewUtilits */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,12 +502,12 @@
 		956BBDD92633AF9F008AC0A6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9550C1CC2CA80EE8001DBD07 /* Debug */,
 				95D583E82C48FC6300783B07 /* Threads */,
 				95C6384D290CF96900A224B2 /* AppVersion.swift */,
 				95C6384F290CF96900A224B2 /* Decorate.swift */,
 				95C63850290CF96900A224B2 /* Environment.swift */,
 				95C6384E290CF96900A224B2 /* Reachability.swift */,
-				95C63868290CF9EF00A224B2 /* Log.swift */,
 				953310C12A374F3200D58A82 /* Callback.swift */,
 				95E359DA2A5268FD00D2A036 /* NotificationObserver.swift */,
 				951BD2982C4FDA6A00CF4EAF /* AppThemeManager.swift */,
@@ -898,6 +912,7 @@
 			files = (
 				956BBDE52633AF9F008AC0A6 /* Extension+UIImage.swift in Sources */,
 				95C63865290CF98900A224B2 /* AppView.swift in Sources */,
+				9550C1CB2CA80E7C001DBD07 /* Measure.swift in Sources */,
 				9576438B2C06C5CB00CFCF43 /* Extension+Color.swift in Sources */,
 				95C63855290CF96900A224B2 /* DebouncedFunction.swift in Sources */,
 				9574EF7E2C4CF6A000066722 /* PlaceholderButtonOptions.swift in Sources */,
@@ -937,6 +952,7 @@
 				95D583E72C48E33100783B07 /* RecursionFunction.swift in Sources */,
 				956BBDFB2633AF9F008AC0A6 /* Extension+UIStackView.swift in Sources */,
 				955856542C4B6DB200FDDD23 /* AppSpacerView.swift in Sources */,
+				9550C1CE2CA80F04001DBD07 /* TimeLogger.swift in Sources */,
 				956BBDF62633AF9F008AC0A6 /* Extension+AVPlayer.swift in Sources */,
 				953310B12A3741FD00D58A82 /* AppViewSectionModel.swift in Sources */,
 				95C63856290CF96900A224B2 /* AppVersion.swift in Sources */,
