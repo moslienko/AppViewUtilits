@@ -50,7 +50,7 @@ public class AppTextField: UITextField {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addTarget(self, action: #selector(didChangeTextFieldText), for: .editingChanged)
+        self.commonInit()
     }
     
     convenience public init(
@@ -70,6 +70,8 @@ public class AppTextField: UITextField {
         self.shouldClear = shouldClear
         self.shouldReturn = shouldReturn
         self.shouldChangeCharactersIn = shouldChangeCharactersIn
+        
+        self.commonInit()
     }
     
     required init?(coder: NSCoder) {
@@ -78,6 +80,10 @@ public class AppTextField: UITextField {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
+        self.commonInit()
+    }
+    
+    private func commonInit() {
         self.delegate = self
     }
 }
@@ -122,15 +128,6 @@ extension AppTextField: UITextFieldDelegate {
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         shouldReturn?(textField) ?? true
-    }
-}
-
-// MARK: - Actions
-private extension AppTextField {
-    
-    @objc
-    func didChangeTextFieldText(_ textField: UITextField) {
-        didTextChanged?(textField.text ?? "")
     }
 }
 
