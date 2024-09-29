@@ -9,20 +9,19 @@
 #if canImport(UIKit)
 import UIKit
 
-public class AppTextView: UITextField {
+/// Subclass `UITextView`.
+public class AppTextView: UITextView {
     
     // MARK: - Params
     public var maxCharacters: Int?
     
     // MARK: - Callbacks
-    public var didTextChanged: ((String) -> Void)?
-    public var didBeginEditing: ((UITextField) -> Void)?
-    public var didEndEditing: ((UITextField) -> Void)?
-    public var shouldBeginEditing: ((UITextField) -> Bool)?
-    public var shouldEndEditing: ((UITextField) -> Bool)?
-    public var shouldClear: ((UITextField) -> Bool)?
-    public var shouldReturn: ((UITextField) -> Bool)?
-    public var shouldChangeCharactersIn: ((UITextField, NSRange, String) -> Bool)?
+    public var didTextChanged: DataCallback<String>?
+    public var didBeginEditing: DataCallback<UITextView>?
+    public var didEndEditing: DataCallback<UITextView>?
+    public var shouldBeginEditing: ReturnedDataCallback<UITextView, Bool>?
+    public var shouldEndEditing: ReturnedDataCallback<UITextView, Bool>?
+    public var shouldChangeTextIn: ReturnedDataCallback<(UITextView, NSRange, String), Bool>?
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -31,65 +30,55 @@ public class AppTextView: UITextField {
     
     // MARK: - Init
     convenience public init(
-        didTextChanged: ((String) -> Void)? = nil,
-        didBeginEditing: ((UITextField) -> Void)? = nil,
-        didEndEditing: ((UITextField) -> Void)? = nil,
-        shouldBeginEditing: ((UITextField) -> Bool)? = nil,
-        shouldClear: ((UITextField) -> Bool)? = nil,
-        shouldReturn: ((UITextField) -> Bool)? = nil,
-        shouldChangeCharactersIn: ((UITextField, NSRange, String) -> Bool)?  = nil
+        didTextChanged: DataCallback<String>? = nil,
+        didBeginEditing: DataCallback<UITextView>? = nil,
+        didEndEditing: DataCallback<UITextView>? = nil,
+        shouldBeginEditing: ReturnedDataCallback<UITextView, Bool>? = nil,
+        shouldEndEditing: ReturnedDataCallback<UITextView, Bool>? = nil,
+        shouldChangeTextIn: ReturnedDataCallback<(UITextView, NSRange, String), Bool>?  = nil
     ) {
-        self.init(frame: .zero)
+        self.init(frame: .zero, textContainer: nil)
         self.didTextChanged = didTextChanged
         self.didBeginEditing = didBeginEditing
         self.didEndEditing = didEndEditing
         self.shouldBeginEditing = shouldBeginEditing
-        self.shouldClear = shouldClear
-        self.shouldReturn = shouldReturn
-        self.shouldChangeCharactersIn = shouldChangeCharactersIn
+        self.shouldEndEditing = shouldEndEditing
+        self.shouldChangeTextIn = shouldChangeTextIn
+        self.delegate = self
     }
 }
 
-// MARK: - UITextFieldDelegate
-extension AppTextView: UITextFieldDelegate {
+// MARK: - UITextViewDelegate
+extension AppTextView: UITextViewDelegate {
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+        didBeginEditing?(textView)
+    }
+    
+    public func textViewDidEndEditing(_ textView: UITextView) {
+        didEndEditing?(textView)
+    }
+    
+    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        return shouldBeginEditing?(textView) ?? true
+    }
+    
+    public func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        return shouldEndEditing?(textView) ?? true
+    }
+    
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString?)?.replacingCharacters(in: range, with: text) ?? ""
         if let maxCharacters = maxCharacters {
             if maxCharacters > 0 && newText.count > maxCharacters {
                 return false
             }
-            return true
         }
-        let shouldChangeCharacters = shouldChangeCharactersIn?(self, range, string) ?? true
-        if shouldChangeCharacters {
+        let shouldChangeText = shouldChangeTextIn?((self, range, text)) ?? true
+        if shouldChangeText {
             didTextChanged?(newText)
         }
-        return shouldChangeCharacters
-    }
-    
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
-        didBeginEditing?(textField)
-    }
-    
-    public func textFieldDidEndEditing(_ textField: UITextField) {
-        didEndEditing?(textField)
-    }
-    
-    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        shouldBeginEditing?(textField) ?? true
-    }
-    
-    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        shouldEndEditing?(textField) ?? true
-    }
-    
-    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        shouldClear?(textField) ?? true
-    }
-    
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        shouldReturn?(textField) ?? true
+        return shouldChangeText
     }
 }
 
