@@ -23,9 +23,42 @@ public class AppTextView: UITextView {
     public var shouldEndEditing: ReturnedDataCallback<UITextView, Bool>?
     public var shouldChangeTextIn: ReturnedDataCallback<(UITextView, NSRange, String), Bool>?
     
+    // MARK: - Placeholder
+    public var placeholder: String? {
+        didSet {
+            placeholderLabel.text = placeholder
+            updatePlaceholderVisibility()
+        }
+    }
+    
+    public var placeholderColor: UIColor = .lightGray {
+        didSet {
+            placeholderLabel.textColor = placeholderColor
+        }
+    }
+    
+    public var placeholderFont: UIFont? {
+        didSet {
+            placeholderLabel.font = placeholderFont ?? self.font
+        }
+    }
+    
+    public var placeholderFrame: CGRect?
+    
+    private lazy var placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = placeholderColor
+        label.font = placeholderFont ?? self.font
+        label.numberOfLines = 0
+        label.backgroundColor = .clear
+        addSubview(label)
+        
+        return label
+    }()
+    
     override public func awakeFromNib() {
         super.awakeFromNib()
-        self.delegate = self
+        self.commonInit()
     }
     
     // MARK: - Init
@@ -44,7 +77,48 @@ public class AppTextView: UITextView {
         self.shouldBeginEditing = shouldBeginEditing
         self.shouldEndEditing = shouldEndEditing
         self.shouldChangeTextIn = shouldChangeTextIn
+        
+        self.commonInit()
+    }
+    
+    public override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        self.commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        layoutPlaceholder()
+    }
+    
+    private func commonInit() {
         self.delegate = self
+        configurePlaceholder()
+    }
+}
+
+// MARK: - Placeholder methods
+private extension AppTextView {
+    
+    // MARK: - Placeholder Configuration
+    func configurePlaceholder() {
+        placeholderLabel.text = placeholder
+        placeholderLabel.textColor = placeholderColor
+        placeholderLabel.font = placeholderFont ?? self.font
+        updatePlaceholderVisibility()
+    }
+    
+    func layoutPlaceholder() {
+        placeholderLabel.frame = placeholderFrame ?? CGRect(x: 5, y: 5, width: bounds.width - 10, height: 0)
+        placeholderLabel.sizeToFit()
+    }
+    
+    func updatePlaceholderVisibility() {
+        placeholderLabel.isHidden = !text.isEmpty
     }
 }
 
@@ -57,6 +131,7 @@ extension AppTextView: UITextViewDelegate {
     
     public func textViewDidEndEditing(_ textView: UITextView) {
         didEndEditing?(textView)
+        updatePlaceholderVisibility()
     }
     
     public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
@@ -77,8 +152,13 @@ extension AppTextView: UITextViewDelegate {
         let shouldChangeText = shouldChangeTextIn?((self, range, text)) ?? true
         if shouldChangeText {
             didTextChanged?(newText)
+            updatePlaceholderVisibility()
         }
         return shouldChangeText
+    }
+    
+    public func textViewDidChange(_ textView: UITextView) {
+        updatePlaceholderVisibility()
     }
 }
 
