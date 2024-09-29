@@ -56,6 +56,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 ## Extensions
 There are extensions to the types: 
 
+| Array                                                       | AVPlayer                                                  | UIButton                                                   | CALayer                                                   |
 |------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------|
 | [Array](Sources/AppViewUtilits/Extensions/Extension+Array.swift) | [AVPlayer](Sources/AppViewUtilits/Extensions/Extension+AVPlayer.swift) | [UIButton](Sources/AppViewUtilits/Extensions/Extension+UIButton.swift) | [CALayer](Sources/AppViewUtilits/Extensions/Extension+CALayer.swift) |
 | [CAAnimation](Sources/AppViewUtilits/Extensions/Extension+CAAnimation.swift) | [CGFloat](Sources/AppViewUtilits/Extensions/Extension+CGFloat.swift) | [Collection](Sources/AppViewUtilits/Extensions/Extension+Collection.swift) | [Color](Sources/AppViewUtilits/Extensions/Extension+Color.swift) |
