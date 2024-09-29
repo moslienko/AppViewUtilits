@@ -530,7 +530,7 @@ RecursionFunction(maxRetryCount: 5)
       Int.random(in: 0...5) == 3
     },
     didHandleMethod: {
-		   Log.debug("Recursion success handler")
+	   Log.debug("Recursion success handler")
     },
     delay: 3.0
   )
